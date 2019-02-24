@@ -4,7 +4,7 @@ import com.epam.javacourse.user.User;
 
 import static com.epam.javacourse.memory.Memory.users;
 
-public class UserMemoryRepository {
+public class UserMemoryRepository implements UserRepository{
 
     public void addUser(User user) {
         users.add(user);

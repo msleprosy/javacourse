@@ -2,9 +2,6 @@ package com.epam.javacourse.country.repository;
 
 import com.epam.javacourse.country.Country;
 
-/**
- * Created by veronika on 24.02.2019.
- */
 public interface CountryRepository {
 
     void addCountry(Country country);
