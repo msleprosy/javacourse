@@ -1,7 +1,7 @@
-package com.epam.javacourse.util;
+package com.epam.javacourse.common.solutions.dataclasses;
 
 public class Pair {
-    /*private String left;
+    private String left;
     private String[] right;
 
     public Pair(String left, String[] right) {
@@ -15,5 +15,5 @@ public class Pair {
 
     public String[] getRight() {
         return right;
-    }*/
+    }
 }

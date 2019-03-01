@@ -1,10 +1,10 @@
 package com.epam.javacourse.order.repository;
 
-import com.epam.javacourse.order.Order;
+import com.epam.javacourse.common.business.repository.BaseRepository;
+import com.epam.javacourse.order.domain.Order;
 
-public interface OrderRepository {
+public interface OrderRepository extends BaseRepository{
     void addOrder(Order order);
-    void deleteOrder(Order order);
-    void deleteOrder(Long id);
-    void printOrders();
+    void deleteOrder(long id);
+    Order findById(long id);
 }

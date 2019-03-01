@@ -1,10 +1,11 @@
-package com.epam.javacourse.country;
+package com.epam.javacourse.country.domain;
 
-import com.epam.javacourse.city.City;
+import com.epam.javacourse.city.domain.City;
+import com.epam.javacourse.common.business.domain.BaseDomain;
 
 import java.util.List;
 
-public class Country {
+public class Country extends BaseDomain{
     private String name;
     private String language;
     private List<City> cities;
@@ -43,8 +44,9 @@ public class Country {
     @Override
     public String toString() {
         return "Country{" +
-                "name='" + name + '\'' +
-                ", language='" + language + '\'' +
+                "id = " + id +
+                ", name = " + name + '\'' +
+                ", language = " + language + '\'' +
                 ", \n\ncities:\n" + getCitiesAsStr();
     }
 

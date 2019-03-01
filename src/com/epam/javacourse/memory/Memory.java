@@ -1,8 +1,8 @@
 package com.epam.javacourse.memory;
 
-import com.epam.javacourse.city.City;
-import com.epam.javacourse.country.Country;
-import com.epam.javacourse.order.Order;
+import com.epam.javacourse.city.domain.City;
+import com.epam.javacourse.country.domain.Country;
+import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.user.User;
 
 import java.util.ArrayList;

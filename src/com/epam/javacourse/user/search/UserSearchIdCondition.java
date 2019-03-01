@@ -1,7 +1,7 @@
 package com.epam.javacourse.user.search;
 
 import com.epam.javacourse.user.service.UserMemoryService;
-import com.epam.javacourse.util.BaseSearchIdCondition;
+import com.epam.javacourse.common.solutions.BaseSearchIdCondition;
 
 public class UserSearchIdCondition extends BaseSearchIdCondition {
 

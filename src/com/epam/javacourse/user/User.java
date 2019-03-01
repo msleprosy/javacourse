@@ -1,6 +1,6 @@
 package com.epam.javacourse.user;
 
-import com.epam.javacourse.order.Order;
+import com.epam.javacourse.order.domain.Order;
 
 import java.util.List;
 

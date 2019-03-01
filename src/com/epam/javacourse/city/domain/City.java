@@ -1,6 +1,8 @@
-package com.epam.javacourse.city;
+package com.epam.javacourse.city.domain;
 
-public class City {
+import com.epam.javacourse.common.business.domain.BaseDomain;
+
+public class City extends BaseDomain{
     private String name;
     private int population;
     private boolean isCapital;
@@ -40,9 +42,10 @@ public class City {
     @Override
     public String toString() {
         return "City{" +
-                "name='" + name + '\'' +
-                ", population=" + population +
-                ", isCapital=" + isCapital +
-                '}';
+                "id = " + id +
+                ", name = " + name + '\'' +
+                ", population = " + population +
+                ", isCapital = " + isCapital +
+                "}";
     }
 }

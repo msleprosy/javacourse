@@ -1,23 +1,17 @@
-package com.epam.javacourse.order;
+package com.epam.javacourse.order.domain;
 
-import com.epam.javacourse.city.City;
-import com.epam.javacourse.country.Country;
+import com.epam.javacourse.city.domain.City;
+import com.epam.javacourse.common.business.domain.BaseDomain;
+import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.user.User;
 
-public class Order {
-    private Long id;
+public class Order extends BaseDomain{
     private double price;
     private User user;
     private Country country;
     private City city;
 
-    public Order(Long id, double price, User user, Country country, City city) {
-        this.id = id;
-        this.price = price;
-        this.user = user;
-        this.country = country;
-        this.city = city;
-    }
+    public Order() {}
 
     public Long getId() { return id; }
 
@@ -58,11 +52,11 @@ public class Order {
     @Override
     public String toString() {
         return "Order{" +
-                "id=" + id +
-                ", price=" + price +
-                ", user=" + user +
-                ", country=" + country +
-                ", city=" + city +
+                "id = " + id +
+                ", price = " + price +
+                ", user = " + user +
+                ", country = " + country +
+                ", city = " + city +
                 '}';
     }
 }
