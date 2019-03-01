@@ -35,6 +35,21 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
+    public Country findById(long id) {
+        return findCountryById(id);
+    }
+
+    @Override
+    public Country findByName(String countryName) {
+        for (Country country : countries) {
+            if (countryName.equals(country.getName())) {
+                return country;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void deleteById(long id) {
         Country found = findCountryById(id);
         if (found != null) {

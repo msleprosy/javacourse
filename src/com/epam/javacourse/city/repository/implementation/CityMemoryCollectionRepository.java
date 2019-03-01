@@ -48,6 +48,21 @@ public class CityMemoryCollectionRepository implements CityRepository {
     }
 
     @Override
+    public City findById(long id) {
+        return findCityById(id);
+    }
+
+    @Override
+    public City findByName(String cityName) {
+        for (City city : cities) {
+            if (cityName.equals(city.getName())) {
+                return city;
+            }
+        }
+        return null;
+    }
+
+    @Override
     public void deleteById(long id) {
         City found = findCityById(id);
         if (found != null) {

@@ -10,4 +10,6 @@ public interface CityService extends BaseService{
     void updateCityName(String currentCityName, String newCityName);
     void updateCityPopulation(String cityName, int currentCityPopulation, int newCityPopulation);
     void updateTheCapitalMark(String cityName);
+    City findById(long id);
+    City findByName(String cityName);
 }

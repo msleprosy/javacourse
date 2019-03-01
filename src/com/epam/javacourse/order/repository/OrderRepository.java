@@ -5,6 +5,5 @@ import com.epam.javacourse.order.domain.Order;
 
 public interface OrderRepository extends BaseRepository{
     void addOrder(Order order);
-    void deleteOrder(long id);
-    Order findById(long id);
+    Order findById(Long id);
 }

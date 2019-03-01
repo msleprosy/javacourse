@@ -13,15 +13,7 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     }
 
     @Override
-    public void deleteOrder(long id) {
-        Long foundIndex = findOrderIndexById(id);
-        if (foundIndex != null) {
-            deleteOrderByIndex(foundIndex);
-        }
-    }
-
-    @Override
-    public Order findById(long id) {
+    public Order findById(Long id) {
         return findOrderById(id);
     }
 
@@ -48,22 +40,4 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
         }
         return null;
     }
-
-    private void deleteOrderByIndex(long orderIndex){
-        for (Order order : orders){
-            if (order.getId().equals(orderIndex)){
-             orders.remove(order);
-            }
-        }
-    }
-
-    private Long findOrderIndexById(long id) {
-        for (Order order : orders) {
-            if (order.getId().equals(id)) {
-                return order.getId();
-            }
-        }
-        return null;
-    }
-
 }

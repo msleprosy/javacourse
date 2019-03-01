@@ -1,6 +1,6 @@
 package com.epam.javacourse.user.service;
 
-import com.epam.javacourse.user.User;
+import com.epam.javacourse.user.domain.User;
 
 public interface UserService {
     void evaluateOrderPriceByUserType(double price);

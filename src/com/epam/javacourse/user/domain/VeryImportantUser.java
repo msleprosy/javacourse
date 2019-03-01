@@ -1,4 +1,4 @@
-package com.epam.javacourse.user;
+package com.epam.javacourse.user.domain;
 
 public class VeryImportantUser extends User {
 

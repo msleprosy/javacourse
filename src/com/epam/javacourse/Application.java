@@ -13,7 +13,7 @@ public class Application {
         cities.add(city);
 
         Order order = new Order(1L, 10000.0, user, country, city);
-        OrderMemoryService orderMemoryService = new OrderMemoryService();
+        OrderDefaultService orderMemoryService = new OrderDefaultService();
         orders.add(order);
         orderMemoryService.printOrders();*/
 

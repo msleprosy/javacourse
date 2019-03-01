@@ -43,6 +43,16 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
+    public City findById(long id) {
+        return cityRepository.findById(id);
+    }
+
+    @Override
+    public City findByName(String cityName) {
+        return cityRepository.findByName(cityName);
+    }
+
+    @Override
     public void deleteById(Long id) {
     cityRepository.deleteById(id);
     }

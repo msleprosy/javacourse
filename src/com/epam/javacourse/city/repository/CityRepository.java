@@ -12,4 +12,5 @@ public interface CityRepository extends BaseRepository{
     void updateCityPopulation(String cityName, int currentCityPopulation, int newCityPopulation);
     void updateTheCapitalMark(String cityName);
     City findById(long id);
+    City findByName(String cityName);
 }

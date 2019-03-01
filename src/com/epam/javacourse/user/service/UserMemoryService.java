@@ -1,8 +1,8 @@
 package com.epam.javacourse.user.service;
 
-import com.epam.javacourse.user.SimpleUser;
-import com.epam.javacourse.user.User;
-import com.epam.javacourse.user.VeryImportantUser;
+import com.epam.javacourse.user.domain.SimpleUser;
+import com.epam.javacourse.user.domain.User;
+import com.epam.javacourse.user.domain.VeryImportantUser;
 import com.epam.javacourse.user.repository.UserMemoryRepository;
 
 public class UserMemoryService implements UserService{

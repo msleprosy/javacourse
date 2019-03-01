@@ -3,7 +3,7 @@ package com.epam.javacourse.order.domain;
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.common.business.domain.BaseDomain;
 import com.epam.javacourse.country.domain.Country;
-import com.epam.javacourse.user.User;
+import com.epam.javacourse.user.domain.User;
 
 public class Order extends BaseDomain{
     private double price;

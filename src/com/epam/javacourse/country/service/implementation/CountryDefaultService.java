@@ -18,7 +18,7 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         countryRepository.deleteById(id);
     }
 
@@ -38,9 +38,13 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void deleteById(Long id) {
-        countryRepository.deleteById(id);
+    public Country findById(Long id) {
+       return countryRepository.findById(id);
+    }
 
+    @Override
+    public Country findByName(String countryName) {
+        return countryRepository.findByName(countryName);
     }
 
     @Override

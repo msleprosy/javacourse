@@ -1,6 +1,6 @@
 package com.epam.javacourse.user.repository;
 
-import com.epam.javacourse.user.User;
+import com.epam.javacourse.user.domain.User;
 
 import static com.epam.javacourse.memory.Memory.users;
 
