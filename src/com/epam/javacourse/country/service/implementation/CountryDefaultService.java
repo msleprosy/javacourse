@@ -1,5 +1,6 @@
 package com.epam.javacourse.country.service.implementation;
 
+import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
 import com.epam.javacourse.country.service.CountryService;
@@ -7,9 +8,11 @@ import com.epam.javacourse.country.service.CountryService;
 public class CountryDefaultService implements CountryService {
 
     private final CountryRepository countryRepository;
+    private final CityRepository cityRepository;
 
-    CountryDefaultService(CountryRepository countryRepository){
+    public CountryDefaultService(CountryRepository countryRepository, CityRepository cityRepository){
         this.countryRepository = countryRepository;
+        this.cityRepository = cityRepository;
     }
 
     @Override

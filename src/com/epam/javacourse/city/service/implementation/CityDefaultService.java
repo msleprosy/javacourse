@@ -8,7 +8,7 @@ public class CityDefaultService implements CityService {
 
     private final CityRepository cityRepository;
 
-    CityDefaultService(CityRepository cityRepository){
+    public CityDefaultService(CityRepository cityRepository){
         this.cityRepository = cityRepository;
     }
 

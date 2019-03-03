@@ -7,4 +7,5 @@ public interface UserService extends BaseServiceForOperationsWithNameField{
     void evaluateOrderPriceByUserType(double price);
     void addUser(User user);
     User findById(Long id);
+    User findByName(String name);
 }

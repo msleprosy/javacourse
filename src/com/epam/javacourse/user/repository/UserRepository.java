@@ -4,7 +4,10 @@ import com.epam.javacourse.common.business.repository.BaseRepositoryForOperation
 import com.epam.javacourse.user.domain.User;
 
 public interface UserRepository extends BaseRepositoryForOperationsWithNameField{
+
     void addUser(User user);
-    User findById(long id);
+
+    User findById(Long id);
+
     User findByName(String name);
 }
