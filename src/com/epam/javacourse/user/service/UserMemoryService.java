@@ -3,7 +3,7 @@ package com.epam.javacourse.user.service;
 import com.epam.javacourse.user.domain.SimpleUser;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.domain.VeryImportantUser;
-import com.epam.javacourse.user.repository.UserMemoryRepository;
+import com.epam.javacourse.user.repository.implementation.UserMemoryCollectionRepository;
 
 public class UserMemoryService implements UserService{
 
@@ -13,8 +13,9 @@ public class UserMemoryService implements UserService{
 
     private VeryImportantUser veryImportantUser = new VeryImportantUser();
 
-    private UserMemoryRepository userMemoryRepository = new UserMemoryRepository();
+    private UserMemoryCollectionRepository userMemoryCollectionRepository = new UserMemoryCollectionRepository();
 
+    @Override
     public void evaluateOrderPriceByUserType(double price){
         if (price <= THRESHOLD_PRICE_OF_THE_ORDER){
             simpleUser.setSimpleUserDiscount(price);
@@ -23,23 +24,33 @@ public class UserMemoryService implements UserService{
         }
     }
 
+    @Override
     public void addUser(User user) {
-        userMemoryRepository.addUser(user);
+        userMemoryCollectionRepository.addUser(user);
     }
 
-    public User findUserById(Long id) {
-        return userMemoryRepository.findUserById(id);
+    @Override
+    public User findById(Long id) {
+        return userMemoryCollectionRepository.findById(id);
     }
 
-    public void deleteUser(User user) {
-        userMemoryRepository.deleteUser(user);
+    @Override
+    public void deleteById(Long id) {
+        userMemoryCollectionRepository.deleteById(id);
     }
 
-    public void deleteUser(Long id) {
-        userMemoryRepository.deleteUser(id);
+    @Override
+    public void printAll(){
+        userMemoryCollectionRepository.printAll();
     }
 
-    public void printUsers(){
-        userMemoryRepository.printUsers();
+    @Override
+    public void deleteByName(String nameForDeleting) {
+        userMemoryCollectionRepository.deleteByName(nameForDeleting);
+    }
+
+    @Override
+    public void updateByName(String currentName, String newName) {
+        userMemoryCollectionRepository.updateByName(currentName, newName);
     }
 }

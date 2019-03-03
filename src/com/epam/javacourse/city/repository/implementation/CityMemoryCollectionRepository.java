@@ -15,10 +15,10 @@ public class CityMemoryCollectionRepository implements CityRepository {
     }
 
     @Override
-    public void updateCityName(String currentCityName, String newCityName) {
+    public void updateByName(String currentName, String newName) {
         for (City city : cities) {
-            if (city.getName().equals(currentCityName)) {
-                city.setName(newCityName);
+            if (city.getName().equals(currentName)) {
+                city.setName(newName);
             }
         }
     }
@@ -71,8 +71,8 @@ public class CityMemoryCollectionRepository implements CityRepository {
     }
 
     @Override
-    public void deleteByName(String cityNameForDeleting) {
-     deleteCityByName(cityNameForDeleting);
+    public void deleteByName(String nameForDeleting) {
+     deleteCityByName(nameForDeleting);
     }
 
     @Override
@@ -91,11 +91,11 @@ public class CityMemoryCollectionRepository implements CityRepository {
         return null;
     }
 
-    private void deleteCityByName(String cityNameForDeleting) {
+    private void deleteCityByName(String nameForDeleting) {
         Iterator<City> iter = cities.iterator();
         while (iter.hasNext()) {
             String cityName = iter.next().getName();
-            if (cityName.equals(cityNameForDeleting)) {
+            if (cityName.equals(nameForDeleting)) {
                 iter.remove();
             }
         }

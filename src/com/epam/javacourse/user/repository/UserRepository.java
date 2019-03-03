@@ -1,11 +1,10 @@
 package com.epam.javacourse.user.repository;
 
+import com.epam.javacourse.common.business.repository.BaseRepositoryForOperationsWithNameField;
 import com.epam.javacourse.user.domain.User;
 
-public interface UserRepository {
+public interface UserRepository extends BaseRepositoryForOperationsWithNameField{
     void addUser(User user);
-    User findUserById(long id);
-    void deleteUser(User user);
-    void deleteUser(Long id);
-    void printUsers();
+    User findById(long id);
+    User findByName(String name);
 }

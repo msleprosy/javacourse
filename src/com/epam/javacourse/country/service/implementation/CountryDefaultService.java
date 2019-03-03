@@ -23,13 +23,13 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void deleteByName(String countryNameForDeleting) {
-        countryRepository.deleteByName(countryNameForDeleting);
+    public void deleteByName(String nameForDeleting) {
+        countryRepository.deleteByName(nameForDeleting);
     }
 
     @Override
-    public void updateCountryName(String currentCountryName, String newCountryName){
-        countryRepository.updateCountryName(currentCountryName, newCountryName);
+    public void updateByName(String currentName, String newName){
+        countryRepository.updateByName(currentName, newName);
     }
 
     @Override

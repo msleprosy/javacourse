@@ -18,18 +18,13 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
-    public void deleteById(long id) {
-        cityRepository.deleteById(id);
+    public void deleteByName(String nameForDeleting) {
+        cityRepository.deleteByName(nameForDeleting);
     }
 
     @Override
-    public void deleteByName(String cityNameForDeleting) {
-        cityRepository.deleteByName(cityNameForDeleting);
-    }
-
-    @Override
-    public void updateCityName(String currentCityName, String newCityName){
-        cityRepository.updateCityName(currentCityName, newCityName);
+    public void updateByName(String currentName, String newName){
+        cityRepository.updateByName(currentName, newName);
     }
 
     @Override

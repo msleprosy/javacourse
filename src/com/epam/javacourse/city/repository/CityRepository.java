@@ -1,14 +1,11 @@
 package com.epam.javacourse.city.repository;
 
 import com.epam.javacourse.city.domain.City;
-import com.epam.javacourse.common.business.repository.BaseRepository;
+import com.epam.javacourse.common.business.repository.BaseRepositoryForOperationsWithNameField;
 
-public interface CityRepository extends BaseRepository{
+public interface CityRepository extends BaseRepositoryForOperationsWithNameField{
 
     void addCity(City city);
-    void deleteById(long id);
-    void deleteByName(String cityNameForDeleting);
-    void updateCityName(String currentCityName, String newCityName);
     void updateCityPopulation(String cityName, int currentCityPopulation, int newCityPopulation);
     void updateTheCapitalMark(String cityName);
     City findById(long id);

@@ -15,10 +15,10 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
-    public void updateCountryName(String currentCountryName, String newCountryName){
+    public void updateByName(String currentName, String newName){
         for (Country country : countries) {
-            if (country.getName().equals(currentCountryName)) {
-                country.setName(newCountryName);
+            if (country.getName().equals(currentName)) {
+                country.setName(newName);
             }
         }
     }
@@ -35,7 +35,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
-    public Country findById(long id) {
+    public Country findById(Long id) {
         return findCountryById(id);
     }
 
@@ -58,8 +58,8 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
-    public void deleteByName(String countryNameForDeleting){
-         deleteCountryByName(countryNameForDeleting);
+    public void deleteByName(String nameForDeleting){
+         deleteCountryByName(nameForDeleting);
     }
 
     @Override
@@ -78,11 +78,11 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         return null;
     }
 
-    private void deleteCountryByName(String countryNameForDeleting) {
+    private void deleteCountryByName(String nameForDeleting) {
         Iterator<Country> iter = countries.iterator();
         while (iter.hasNext()) {
             String countryName = iter.next().getName();
-            if (countryName.equals(countryNameForDeleting)) {
+            if (countryName.equals(nameForDeleting)) {
                 iter.remove();
             }
         }

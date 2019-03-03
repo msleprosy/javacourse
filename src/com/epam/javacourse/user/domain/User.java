@@ -1,11 +1,12 @@
 package com.epam.javacourse.user.domain;
 
+import com.epam.javacourse.common.business.domain.BaseDomain;
 import com.epam.javacourse.order.domain.Order;
 
 import java.util.List;
 
-public class User {
-    private Long id;
+public class User extends BaseDomain{
+
     private String name;
     private String lastName;
     private int passportNumber;
@@ -22,14 +23,6 @@ public class User {
         this.name = name;
         this.lastName = lastName;
         this.passportNumber = passportNumber;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -67,10 +60,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", passportNumber=" + passportNumber +
+                "id = " + id +
+                ", name = '" + name + '\'' +
+                ", lastName = '" + lastName + '\'' +
+                ", passportNumber = " + passportNumber +
                 '}';
     }
 

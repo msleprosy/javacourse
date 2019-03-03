@@ -1,12 +1,10 @@
 package com.epam.javacourse.user.service;
 
+import com.epam.javacourse.common.business.service.BaseServiceForOperationsWithNameField;
 import com.epam.javacourse.user.domain.User;
 
-public interface UserService {
+public interface UserService extends BaseServiceForOperationsWithNameField{
     void evaluateOrderPriceByUserType(double price);
     void addUser(User user);
-    User findUserById(Long id);
-    void deleteUser(User user);
-    void deleteUser(Long id);
-    void printUsers();
+    User findById(Long id);
 }
