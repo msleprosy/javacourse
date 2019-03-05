@@ -18,6 +18,12 @@ public class User extends BaseDomain{
         this.name = name;
     }
 
+    public User(String name, String lastName, int passportNumber) {
+        this.name = name;
+        this.lastName = lastName;
+        this.passportNumber = passportNumber;
+    }
+
     public User(Long id, String name, String lastName, int passportNumber) {
         this.id = id;
         this.name = name;
