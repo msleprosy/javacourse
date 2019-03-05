@@ -49,28 +49,28 @@ public class Application {
 
     private void addCountriesWithCities() {
         Pair[] countriesWithCities = new Pair[]{
-                new Pair("Mercedes-Benz | Germany",
+                new Pair("Japan | japanese",
                         new String[]{
-                                "G-500 Amg   | Fast and brutal | 1960 | -1",
-                                "SLR McLaren | Great Sound     | 2002 | 2008"
+                                "Osaka  | 10000 | 0 ",
+                                "Tokio | 20000 | 1 "
                         }
                 ),
-                new Pair("Kamaz | Russia",
+                new Pair("Ireland | irish",
                         new String[]{
-                                "53125 | Power yeaah | 1970 | -1"
-                        }
-                ),
-
-                new Pair("Ural | Russia",
-                        new String[]{
-                                "53125 | Power yeaah | 1970 | -1"
+                                "Dublin | 30000 | 1"
                         }
                 ),
 
-                new Pair("Ford | USA",
+                new Pair("England | english",
                         new String[]{
-                                "Focus   | Casual, economic | 2002 | -1",
-                                "Scorpio | 90-th dream      | 1992 | 1998",
+                                "London | 12000 | 1"
+                        }
+                ),
+
+                new Pair("Russia | russian",
+                        new String[]{
+                                "Saint-Petersburg   | 40000 | 0",
+                                "Moscow | 25000     | 1",
                         }
                 ),
         };
@@ -92,7 +92,6 @@ public class Application {
             attrs = csvCity.split("\\|");
 
             City city = new City();
-            city.setName(attrs[++attrIndex].trim());
             city.setName(attrs[++attrIndex].trim());
             city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
             boolean isCapital = Boolean.valueOf(attrs[++attrIndex].trim());
