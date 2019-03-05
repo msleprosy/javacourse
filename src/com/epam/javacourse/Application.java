@@ -51,7 +51,7 @@ public class Application {
         Pair[] countriesWithCities = new Pair[]{
                 new Pair("Japan | japanese",
                         new String[]{
-                                "Osaka  | 10000 | 0 ",
+                                "Osaka | 10000 | 0 ",
                                 "Tokio | 20000 | 1 "
                         }
                 ),
@@ -96,7 +96,8 @@ public class Application {
             city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
             boolean isCapital = Boolean.valueOf(attrs[++attrIndex].trim());
             city.setIsCapital(isCapital);
-            country.getCities().set(i, city);
+           // country.getCities().set(i, city);
+            country.getCities().get(i) = city;
         }
 
         countryService.addCountry(country);
