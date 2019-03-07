@@ -51,6 +51,13 @@ public class Country extends BaseDomain {
                 ", \n\ncities:\n" + getCitiesAsStr();
     }
 
+    public String getAsStrWithoutCities() {
+        return "id = " + id +
+                ", name = " + name + '\'' +
+                ", language = '" + language + '\'';
+
+    }
+
     private String getCitiesAsStr() {
         StringBuilder stringBuilder = new StringBuilder();
         for (City city : cities) {

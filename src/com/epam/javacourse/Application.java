@@ -4,8 +4,10 @@ import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.service.CityService;
 import com.epam.javacourse.common.business.application.StorageType;
 import com.epam.javacourse.common.business.application.servicefactory.ServiceSupplier;
+import com.epam.javacourse.common.business.search.OrderDirection;
 import com.epam.javacourse.common.solutions.dataclasses.Pair;
 import com.epam.javacourse.country.domain.Country;
+import com.epam.javacourse.country.search.CountryOrderByField;
 import com.epam.javacourse.country.search.CountrySearchCondition;
 import com.epam.javacourse.country.service.CountryService;
 import com.epam.javacourse.order.service.OrderService;
@@ -129,6 +131,37 @@ public class Application {
         }
         userService.addUser(new User("SSSS", "AAAA", "333"));
         userService.deleteById(33L);
+    }
+
+    public void searchCountriesWithoutOrder() {
+        System.out.println("\n----------Search countries No order ------------");
+        CountrySearchCondition countrySearchCondition = new CountrySearchCondition();
+        List<Country> searchResult = countryService.search(countrySearchCondition);
+        for (Country country : searchResult) {
+            System.out.println(country.getAsStrWithoutCities());
+        }
+    }
+
+    public void searchCountriesWithOrderAsc() {
+        System.out.println("\n----------Search countries Order ASC ------------");
+        CountrySearchCondition countrySearchCondition = new CountrySearchCondition();
+        countrySearchCondition.setOrderDirection(OrderDirection.ASC);
+        countrySearchCondition.setOrderByField(CountryOrderByField.NAME);
+        List<Country> searchResult = countryService.search(countrySearchCondition);
+        for (Country country : searchResult) {
+            System.out.println(country.getAsStrWithoutCities());
+        }
+    }
+
+    public void searchCountriesWithOrderDesc() {
+        System.out.println("\n----------Search countries Order Desc ------------");
+        CountrySearchCondition countrySearchCondition = new CountrySearchCondition();
+        countrySearchCondition.setOrderDirection(OrderDirection.DESC);
+        countrySearchCondition.setOrderByField(CountryOrderByField.NAME);
+        List<Country> searchResult = countryService.search(countrySearchCondition);
+        for (Country country : searchResult) {
+            System.out.println(country.getAsStrWithoutCities());
+        }
     }
 
     public static void main(String[] args) {
