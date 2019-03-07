@@ -7,8 +7,8 @@ public class SimpleUser extends User {
 
     public SimpleUser(){}
 
-    public SimpleUser (Long id, String name, String lastName, int passportNumber) {
-        super(id, name, lastName, passportNumber);
+    public SimpleUser (String name, String lastName, String passportNumber) {
+        super(name, lastName, passportNumber);
     }
 
     public void setSimpleUserDiscount(double price) {

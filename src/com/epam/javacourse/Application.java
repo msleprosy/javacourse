@@ -41,8 +41,8 @@ public class Application {
             int attrIndex = -1;
             userService.addUser(new User(userAttrs[++attrIndex].trim(),
                     userAttrs[++attrIndex].trim(),
-                    Integer.parseInt(userAttrs[++attrIndex].trim())
-            ));
+                    userAttrs[++attrIndex].trim())
+            );
         }
     }
 
@@ -127,7 +127,7 @@ public class Application {
         for (Country country : searchResult) {
             System.out.println(country);
         }
-        userService.addUser(new User("SSSS", "AAAA", 333));
+        userService.addUser(new User("SSSS", "AAAA", "333"));
         userService.deleteById(33L);
     }
 

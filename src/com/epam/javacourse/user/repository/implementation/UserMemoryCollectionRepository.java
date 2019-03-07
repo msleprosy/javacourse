@@ -1,5 +1,6 @@
 package com.epam.javacourse.user.repository.implementation;
 
+import com.epam.javacourse.memory.SequenceGenerator;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.repository.UserRepository;
 
@@ -11,6 +12,7 @@ public class UserMemoryCollectionRepository implements UserRepository {
 
     @Override
     public void addUser(User user) {
+        user.setId(SequenceGenerator.getNextValue());
         users.add(user);
     }
 

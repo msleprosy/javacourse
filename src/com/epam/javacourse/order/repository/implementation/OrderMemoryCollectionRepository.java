@@ -1,5 +1,6 @@
 package com.epam.javacourse.order.repository.implementation;
 
+import com.epam.javacourse.memory.SequenceGenerator;
 import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.repository.OrderRepository;
 
@@ -9,6 +10,7 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
 
     @Override
     public void addOrder(Order order) {
+        order.setId(SequenceGenerator.getNextValue());
         orders.add(order);
     }
 

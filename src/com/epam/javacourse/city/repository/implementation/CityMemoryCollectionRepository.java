@@ -2,6 +2,7 @@ package com.epam.javacourse.city.repository.implementation;
 
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
+import com.epam.javacourse.memory.SequenceGenerator;
 
 import java.util.Iterator;
 
@@ -11,6 +12,7 @@ public class CityMemoryCollectionRepository implements CityRepository {
 
     @Override
     public void addCity(City city) {
+        city.setId(SequenceGenerator.getNextValue());
         cities.add(city);
     }
 

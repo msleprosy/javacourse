@@ -8,24 +8,13 @@ import java.util.List;
 public class User extends BaseDomain {
     private String name;
     private String lastName;
-    private int passportNumber;
+    private String passportNumber;
     private List<Order> orders;
 
     public User() {
     }
 
-    public User(String name) {
-        this.name = name;
-    }
-
-    public User(String name, String lastName, int passportNumber) {
-        this.name = name;
-        this.lastName = lastName;
-        this.passportNumber = passportNumber;
-    }
-
-    public User(Long id, String name, String lastName, int passportNumber) {
-        this.id = id;
+    public User(String name, String lastName, String passportNumber) {
         this.name = name;
         this.lastName = lastName;
         this.passportNumber = passportNumber;
@@ -47,11 +36,11 @@ public class User extends BaseDomain {
         this.lastName = lastName;
     }
 
-    public int getPassportNumber() {
+    public String getPassportNumber() {
         return passportNumber;
     }
 
-    public void setPassportNumber(int passportNumber) {
+    public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
 

@@ -7,8 +7,8 @@ public class VeryImportantUser extends User {
 
     public VeryImportantUser(){}
 
-    public VeryImportantUser (Long id, String name, String lastName, int passportNumber) {
-        super(id, name, lastName, passportNumber);
+    public VeryImportantUser (String name, String lastName, String passportNumber) {
+        super(name, lastName, passportNumber);
     }
 
     public void setVeryImportantUserDiscount(double price){

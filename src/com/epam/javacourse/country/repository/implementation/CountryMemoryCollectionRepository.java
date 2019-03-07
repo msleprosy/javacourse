@@ -3,6 +3,7 @@ package com.epam.javacourse.country.repository.implementation;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
 import com.epam.javacourse.country.search.CountrySearchCondition;
+import com.epam.javacourse.memory.SequenceGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,6 +16,8 @@ import static com.epam.javacourse.memory.Memory.countries;
 public class CountryMemoryCollectionRepository implements CountryRepository {
     @Override
     public void addCountry(Country country) {
+
+        country.setId(SequenceGenerator.getNextValue());
         countries.add(country);
     }
 
