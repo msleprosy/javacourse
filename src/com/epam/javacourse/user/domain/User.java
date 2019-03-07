@@ -5,16 +5,16 @@ import com.epam.javacourse.order.domain.Order;
 
 import java.util.List;
 
-public class User extends BaseDomain{
-
+public class User extends BaseDomain {
     private String name;
     private String lastName;
     private int passportNumber;
     private List<Order> orders;
 
-    public User(){}
+    public User() {
+    }
 
-    public User(String name){
+    public User(String name) {
         this.name = name;
     }
 

@@ -17,7 +17,7 @@ public class CountrySearchCondition extends BaseSearchCondition {
         this.name = name;
     }
 
-    public boolean needSearchByName(){
+    public boolean needSearchByName() {
         return true;
     }
 }

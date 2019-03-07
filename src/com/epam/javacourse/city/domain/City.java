@@ -2,12 +2,13 @@ package com.epam.javacourse.city.domain;
 
 import com.epam.javacourse.common.business.domain.BaseDomain;
 
-public class City extends BaseDomain{
+public class City extends BaseDomain {
     private String name;
     private int population;
     private boolean isCapital;
 
-    public City(){}
+    public City() {
+    }
 
     public City(String name, int population, boolean isCapital) {
         this.name = name;

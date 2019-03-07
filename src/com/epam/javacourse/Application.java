@@ -16,15 +16,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
+    static {
+        ServiceSupplier.newInstance(StorageType.MEMORY_COLLECTION);
+    }
 
-        static {
-            ServiceSupplier.newInstance(StorageType.MEMORY_COLLECTION);
-        }
-
-        private UserService userService = ServiceSupplier.getInstance().getUserService();
-        private CountryService countryService = ServiceSupplier.getInstance().getCountryService();
-        private CityService cityService = ServiceSupplier.getInstance().getCityService();
-        private OrderService orderService = ServiceSupplier.getInstance().getOrderService();
+    private UserService userService = ServiceSupplier.getInstance().getUserService();
+    private CountryService countryService = ServiceSupplier.getInstance().getCountryService();
+    private CityService cityService = ServiceSupplier.getInstance().getCityService();
+    private OrderService orderService = ServiceSupplier.getInstance().getOrderService();
 
     private void addUsers() {
         String[] usersAsCsv = new String[]{
@@ -84,7 +83,7 @@ public class Application {
         String[] attrs = countryCsv.split("\\|");
         int attrIndex = -1;
         Country country = new Country(attrs[++attrIndex].trim(), attrs[++attrIndex].trim());
-        country.setCities(new ArrayList<>(citiesCsv.length));
+        country.setCities(new ArrayList<>());
 
         for (int i = 0; i < citiesCsv.length; i++) {
             String csvCity = citiesCsv[i];
@@ -96,8 +95,7 @@ public class Application {
             city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
             boolean isCapital = Boolean.valueOf(attrs[++attrIndex].trim());
             city.setIsCapital(isCapital);
-           // country.getCities().set(i, city);
-            country.getCities().get(i) = city;
+            country.getCities().add(city);
         }
 
         countryService.addCountry(country);
@@ -121,7 +119,7 @@ public class Application {
     public void deleteUsers() {
 
         userService.deleteById(1L);
-        System.out.println("----------Search marks by country and mark name------------");
+        System.out.println("----------Search countries by name------------");
         CountrySearchCondition countrySearchCondition = new CountrySearchCondition();
         countrySearchCondition.setName("Russia");
         List<Country> searchResult = countryService.search(countrySearchCondition);

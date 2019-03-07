@@ -13,7 +13,6 @@ import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
 import static com.epam.javacourse.memory.Memory.countries;
 
 public class CountryMemoryCollectionRepository implements CountryRepository {
-
     @Override
     public void addCountry(Country country) {
         countries.add(country);

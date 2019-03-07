@@ -5,12 +5,13 @@ import com.epam.javacourse.common.business.domain.BaseDomain;
 
 import java.util.List;
 
-public class Country extends BaseDomain{
+public class Country extends BaseDomain {
     private String name;
     private String language;
     private List<City> cities;
 
-    public Country(){}
+    public Country() {
+    }
 
     public Country(String name, String language) {
         this.name = name;

@@ -9,11 +9,10 @@ import com.epam.javacourse.country.service.CountryService;
 import java.util.List;
 
 public class CountryDefaultService implements CountryService {
-
     private final CountryRepository countryRepository;
     private final CityRepository cityRepository;
 
-    public CountryDefaultService(CountryRepository countryRepository, CityRepository cityRepository){
+    public CountryDefaultService(CountryRepository countryRepository, CityRepository cityRepository) {
         this.countryRepository = countryRepository;
         this.cityRepository = cityRepository;
     }
@@ -34,18 +33,18 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void updateByName(String currentName, String newName){
+    public void updateByName(String currentName, String newName) {
         countryRepository.updateByName(currentName, newName);
     }
 
     @Override
-    public void updateCountryLanguage(String countryName, String currentCountryLanguage, String newCountryLanguage){
+    public void updateCountryLanguage(String countryName, String currentCountryLanguage, String newCountryLanguage) {
         countryRepository.updateCountryLanguage(countryName, currentCountryLanguage, newCountryLanguage);
     }
 
     @Override
     public Country findById(Long id) {
-       return countryRepository.findById(id);
+        return countryRepository.findById(id);
     }
 
     @Override
