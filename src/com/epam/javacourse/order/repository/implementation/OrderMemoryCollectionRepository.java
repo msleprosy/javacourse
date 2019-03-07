@@ -15,16 +15,16 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     }
 
     @Override
-    public Order findById(Long id) {
-        return findOrderById(id);
-    }
-
-    @Override
     public void deleteById(long id) {
         Order found = findOrderById(id);
         if (found != null) {
             orders.remove(found);
         }
+    }
+
+    @Override
+    public Order findById(Long id) {
+        return findOrderById(id);
     }
 
     @Override

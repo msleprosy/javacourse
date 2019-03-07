@@ -15,24 +15,19 @@ public class UserMemoryCollectionRepository implements UserRepository {
         user.setId(SequenceGenerator.getNextValue());
         users.add(user);
     }
-
-    @Override
-    public User findById(Long id) {
-        return findUserById(id);
-    }
-
     @Override
     public void deleteByName(String nameForDeleting) {
         deleteUserByName(nameForDeleting);
     }
 
     @Override
-    public void updateByName(String currentName, String newName) {
-        for (User user : users) {
-            if (user.getName().equals(currentName)) {
-                user.setName(newName);
-            }
-        }
+    public void update(User user) {
+
+    }
+
+    @Override
+    public User findById(Long id) {
+        return findUserById(id);
     }
 
     @Override

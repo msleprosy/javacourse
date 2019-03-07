@@ -17,36 +17,21 @@ public class CityMemoryCollectionRepository implements CityRepository {
     }
 
     @Override
-    public void updateByName(String currentName, String newName) {
-        for (City city : cities) {
-            if (city.getName().equals(currentName)) {
-                city.setName(newName);
-            }
+    public void deleteById(long id) {
+        City found = findCityById(id);
+        if (found != null) {
+            cities.remove(found);
         }
     }
 
     @Override
-    public void updateCityPopulation(String cityName, int currentCityPopulation, int newCityPopulation) {
-        for (City city : cities) {
-            if (city.getName().equals(cityName)) {
-                if (city.getPopulation() == currentCityPopulation) {
-                    city.setPopulation(newCityPopulation);
-                }
-            }
-        }
+    public void deleteByName(String nameForDeleting) {
+        deleteCityByName(nameForDeleting);
     }
 
     @Override
-    public void updateTheCapitalMark(String cityName) {
-        for (City city : cities) {
-            if (city.getName().equals(cityName)) {
-                if (city.getIsCapital() == true) {
-                    city.setIsCapital(false);
-                } else {
-                    city.setIsCapital(true);
-                }
-            }
-        }
+    public void update(City city) {
+
     }
 
     @Override
@@ -64,18 +49,6 @@ public class CityMemoryCollectionRepository implements CityRepository {
         return null;
     }
 
-    @Override
-    public void deleteById(long id) {
-        City found = findCityById(id);
-        if (found != null) {
-            cities.remove(found);
-        }
-    }
-
-    @Override
-    public void deleteByName(String nameForDeleting) {
-     deleteCityByName(nameForDeleting);
-    }
 
     @Override
     public void printAll() {

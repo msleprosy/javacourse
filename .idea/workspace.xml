@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8559fe7b-8b5e-4e31-b515-167b2f207361" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/memory/SequenceGenerator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/ClientType.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/SequenceGenerator.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepositoryForOperationsWithNameField.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/SimpleUser.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/SimpleUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/User.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/VeryImportantUser.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/VeryImportantUser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -41,21 +39,45 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OrderMemoryCollectionRepository.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java">
+      <file leaf-file-name="CityRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+            <state relative-caret-position="242">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CityMemoryCollectionRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SequenceGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/memory/SequenceGenerator.java">
+      <file leaf-file-name="UserRepository.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="242">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserMemoryCollectionRepository.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -103,13 +125,10 @@
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/city/service/CityDefaultService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/service/CountryMemoryService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/domain/Order.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/service/OrderMemoryService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/service/OrderService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/service/OrderDefaultService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/search/UserSearchCondition.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepositoryForOperationsWithNameField.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/service/BaseServiceForOperationsWithNameField.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/city/service/CityService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/service/UserMemoryService.java" />
@@ -117,7 +136,6 @@
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/servicefactory/ServiceFactory.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/service/implementation/OrderDefaultService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/service/implementation/UserDefaultService.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/servicefactory/MemoryCollectionServiceFactory.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/servicefactory/ServiceSupplier.java" />
@@ -125,21 +143,25 @@
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/search/OrderSearchCondition.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/city/domain/City.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/domain/Country.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/service/implementation/CountryDefaultService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/service/CountryService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/search/CountrySearchCondition.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/SequenceGenerator.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/memory/SequenceGenerator.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/User.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/SimpleUser.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/VeryImportantUser.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/ClientType.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepositoryForOperationsWithNameField.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java" />
       </list>
     </option>
   </component>
@@ -201,84 +223,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="javacourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="travel_agency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="travel_agency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javacourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="order" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="travel_agency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="travel_agency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javacourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="order" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="travel_agency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="travel_agency" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javacourse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="order" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="repository" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="implementation" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -744,7 +688,7 @@
       <workItem from="1550588121879" duration="1776000" />
       <workItem from="1550767434317" duration="56551000" />
       <workItem from="1551370816346" duration="48044000" />
-      <workItem from="1551796814828" duration="25855000" />
+      <workItem from="1551796814828" duration="27508000" />
     </task>
     <task id="LOCAL-00001" summary="added domains and searches for all entities, added common repository and service interfaces for city and country">
       <created>1551402469235</created>
@@ -809,15 +753,22 @@
       <option name="project" value="LOCAL" />
       <updated>1551970703314</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="fixed error in Application class">
+      <created>1551983221586</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1551983221586</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="132226000" />
+    <option name="totallyTimeSpent" value="133879000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -834,7 +785,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20572917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20572917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -955,13 +906,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/user/test.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/order/service/OrderService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -969,24 +913,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepositoryForOperationsWithNameField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="58" lean-forward="true" selection-start-line="6" selection-start-column="4" selection-end-line="7" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/business/service/BaseService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1006,6 +937,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="13" column="68" lean-forward="false" selection-start-line="13" selection-start-column="68" selection-end-line="13" selection-end-column="75" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,16 +947,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1162,16 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="12" column="1" lean-forward="false" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/business/domain/BaseDomain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1184,14 +1099,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="11" column="54" lean-forward="true" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1222,36 +1129,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/Country.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/domain/City.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
           <caret line="14" column="37" lean-forward="true" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -1298,10 +1179,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/memory/SequenceGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/Country.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="14" column="51" lean-forward="false" selection-start-line="14" selection-start-column="51" selection-end-line="14" selection-end-column="51" />
+          <caret line="7" column="41" lean-forward="false" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepositoryForOperationsWithNameField.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="37" column="16" lean-forward="false" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1316,18 +1239,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/memory/SequenceGenerator.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="154">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="27" column="5" lean-forward="true" selection-start-line="27" selection-start-column="5" selection-end-line="27" selection-end-column="5" />
+        <state relative-caret-position="217">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding />
         </state>
       </provider>
