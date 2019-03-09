@@ -199,6 +199,8 @@ public class Application {
         System.out.println("--------Countries------------");
         application.printCountries();
 
+        application.searchCountriesWithoutOrder();
+
         application.searchCountriesWithOrderAsc();
 
         application.searchCountriesWithOrderDesc();
