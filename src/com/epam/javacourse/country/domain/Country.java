@@ -53,7 +53,7 @@ public class Country extends BaseDomain {
 
     public String getAsStrWithoutCities() {
         return "id = " + id +
-                ", name = " + name + '\'' +
+                ", name = '" + name + '\'' +
                 ", language = '" + language + '\'';
 
     }

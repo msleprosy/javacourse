@@ -5,6 +5,7 @@ import com.epam.javacourse.city.service.CityService;
 import com.epam.javacourse.common.business.application.StorageType;
 import com.epam.javacourse.common.business.application.servicefactory.ServiceSupplier;
 import com.epam.javacourse.common.business.search.OrderDirection;
+import com.epam.javacourse.common.business.search.OrderType;
 import com.epam.javacourse.common.solutions.dataclasses.Pair;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.search.CountryOrderByField;
@@ -164,6 +165,30 @@ public class Application {
         }
     }
 
+    public void searchCountriesWithComplexOrderAsc() {
+        System.out.println("\n----------Search countries COMPLEX Order Asc ------------");
+        CountrySearchCondition countrySearchCondition = new CountrySearchCondition();
+        countrySearchCondition.setOrderDirection(OrderDirection.ASC);
+        countrySearchCondition.setOrderByField(CountryOrderByField.NAME);
+        countrySearchCondition.setOrderType(OrderType.COMPLEX);
+        List<Country> searchResult = countryService.search(countrySearchCondition);
+        for (Country country : searchResult) {
+            System.out.println(country.getAsStrWithoutCities());
+        }
+    }
+
+    public void searchCountriesWithComplexOrderDesc() {
+        System.out.println("\n----------Search countries COMPLEX Order Desc ------------");
+        CountrySearchCondition countrySearchCondition = new CountrySearchCondition();
+        countrySearchCondition.setOrderDirection(OrderDirection.DESC);
+        countrySearchCondition.setOrderByField(CountryOrderByField.NAME);
+        countrySearchCondition.setOrderType(OrderType.COMPLEX);
+        List<Country> searchResult = countryService.search(countrySearchCondition);
+        for (Country country : searchResult) {
+            System.out.println(country.getAsStrWithoutCities());
+        }
+    }
+
     public static void main(String[] args) {
         Application application = new Application();
         application.fillStorage();
@@ -171,8 +196,17 @@ public class Application {
         System.out.println("--------Users------------");
         application.printUsers();
 
-        System.out.println("--------Marks------------");
+        System.out.println("--------Countries------------");
         application.printCountries();
+
+        application.searchCountriesWithOrderAsc();
+
+        application.searchCountriesWithOrderDesc();
+
+        application.searchCountriesWithComplexOrderDesc();
+
+        application.searchCountriesWithComplexOrderAsc();
+
 
         application.deleteUsers();
         System.out.println();

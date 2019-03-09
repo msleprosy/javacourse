@@ -23,18 +23,8 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
-    public void updateByName(String currentName, String newName){
-        cityRepository.updateByName(currentName, newName);
-    }
-
-    @Override
-    public void updateCityPopulation(String cityName, int currentCityPopulation, int newCityPopulation){
-        cityRepository.updateCityPopulation(cityName, currentCityPopulation, newCityPopulation);
-    }
-
-    @Override
-    public void updateTheCapitalMark(String cityName){
-        cityRepository.updateTheCapitalMark(cityName);
+    public void update(City city) {
+       cityRepository.update(city);
     }
 
     @Override

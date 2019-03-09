@@ -33,13 +33,8 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void updateByName(String currentName, String newName) {
-        countryRepository.updateByName(currentName, newName);
-    }
-
-    @Override
-    public void updateCountryLanguage(String countryName, String currentCountryLanguage, String newCountryLanguage) {
-        countryRepository.updateCountryLanguage(countryName, currentCountryLanguage, newCountryLanguage);
+    public void update(Country country) {
+        countryRepository.update(country);
     }
 
     @Override
