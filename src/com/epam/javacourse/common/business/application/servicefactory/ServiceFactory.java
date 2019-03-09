@@ -10,7 +10,10 @@ import com.epam.javacourse.user.service.UserService;
  */
 public interface ServiceFactory {
     CountryService getCountryService();
+
     CityService getCityService();
+
     OrderService getOrderService();
+
     UserService getUserService();
 }

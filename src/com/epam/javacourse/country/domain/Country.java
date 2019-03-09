@@ -3,15 +3,11 @@ package com.epam.javacourse.country.domain;
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.common.business.domain.BaseDomain;
 
-import java.util.List;
-
 public class Country extends BaseDomain {
     private String name;
     private String language;
-    private List<City> cities;
-
-    public Country() {
-    }
+    //private List<City> cities;
+    private City[] cities;
 
     public Country(String name, String language) {
         this.name = name;
@@ -34,11 +30,11 @@ public class Country extends BaseDomain {
         this.language = language;
     }
 
-    public List<City> getCities() {
+    public City[] getCities() {
         return cities;
     }
 
-    public void setCities(List<City> cities) {
+    public void setCities(City[] cities) {
         this.cities = cities;
     }
 

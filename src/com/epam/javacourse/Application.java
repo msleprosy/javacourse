@@ -15,7 +15,6 @@ import com.epam.javacourse.order.service.OrderService;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.service.UserService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
@@ -86,7 +85,7 @@ public class Application {
         String[] attrs = countryCsv.split("\\|");
         int attrIndex = -1;
         Country country = new Country(attrs[++attrIndex].trim(), attrs[++attrIndex].trim());
-        country.setCities(new ArrayList<>());
+        country.setCities(new City[citiesCsv.length]);
 
         for (int i = 0; i < citiesCsv.length; i++) {
             String csvCity = citiesCsv[i];
@@ -98,7 +97,8 @@ public class Application {
             city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
             boolean isCapital = Boolean.valueOf(attrs[++attrIndex].trim());
             city.setIsCapital(isCapital);
-            country.getCities().add(city);
+            //country.getCities().add(city);
+            country.getCities()[i] = city;
         }
 
         countryService.addCountry(country);

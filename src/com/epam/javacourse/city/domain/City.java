@@ -7,15 +7,6 @@ public class City extends BaseDomain {
     private int population;
     private boolean isCapital;
 
-    public City() {
-    }
-
-    public City(String name, int population, boolean isCapital) {
-        this.name = name;
-        this.population = population;
-        this.isCapital = isCapital;
-    }
-
     public String getName() {
         return name;
     }
