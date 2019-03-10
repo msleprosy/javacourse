@@ -37,7 +37,8 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
-    public void update(Country country) {}
+    public void update(Country country) {
+    }
 
     @Override
     public Country findById(Long id) {
@@ -70,6 +71,13 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         }
     }
 
+    @Override
+    public void printAll() {
+        for (Country country : countries) {
+            System.out.println(country);
+        }
+    }
+
     private List<Country> doSearch(CountrySearchCondition searchCondition) {
         boolean searchByName = isNotBlank(searchCondition.getName());
 
@@ -88,13 +96,6 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
             }
         }
         return result;
-    }
-
-    @Override
-    public void printAll() {
-        for (Country country : countries) {
-            System.out.println(country);
-        }
     }
 
     private Country findCountryById(long countryId) {

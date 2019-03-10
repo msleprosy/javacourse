@@ -13,6 +13,8 @@ import com.epam.javacourse.country.search.CountrySearchCondition;
 import com.epam.javacourse.country.service.CountryService;
 import com.epam.javacourse.order.service.OrderService;
 import com.epam.javacourse.user.domain.User;
+import com.epam.javacourse.user.search.UserOrderByField;
+import com.epam.javacourse.user.search.UserSearchCondition;
 import com.epam.javacourse.user.service.UserService;
 
 import java.util.List;
@@ -29,7 +31,7 @@ public class Application {
 
     private void addUsers() {
         String[] usersAsCsv = new String[]{
-                "Ivan        | Ivanov | 21",
+                "Dmitry        | Ivanov | 21",
                 "Petr        | Petrov | 23",
                 "Dmitry      | yuspov | 31",
                 "Dasha       | Jukova | 25",
@@ -189,6 +191,42 @@ public class Application {
         }
     }
 
+    public void searchUsersWithOrderAsc() {
+        System.out.println("\n----------Search users Order ASC ------------");
+        UserSearchCondition userSearchCondition = new UserSearchCondition();
+        userSearchCondition.setOrderDirection(OrderDirection.ASC);
+        userSearchCondition.setOrderByField(UserOrderByField.NAME);
+        List<User> searchResult = userService.search(userSearchCondition);
+        for (User user : searchResult) {
+            System.out.println(user.getUserAsStr());
+        }
+    }
+
+
+    public void searchUsersWithOrderDesc() {
+        System.out.println("\n----------Search users Order Desc ------------");
+        UserSearchCondition userSearchCondition = new UserSearchCondition();
+        userSearchCondition.setOrderDirection(OrderDirection.DESC);
+        userSearchCondition.setOrderByField(UserOrderByField.LASTNAME);
+        List<User> searchResult = userService.search(userSearchCondition);
+        for (User user : searchResult) {
+            System.out.println(user.getUserAsStr());
+        }
+    }
+
+    public void searchUsersWithComplexOrderAsc() {
+        System.out.println("\n----------Search users Order ASC ------------");
+        UserSearchCondition userSearchCondition = new UserSearchCondition();
+        userSearchCondition.setOrderDirection(OrderDirection.ASC);
+        userSearchCondition.setOrderByField(UserOrderByField.NAME);
+        userSearchCondition.setOrderType(OrderType.COMPLEX);
+        List<User> searchResult = userService.search(userSearchCondition);
+        for (User user : searchResult) {
+            System.out.println(user.getUserAsStr());
+        }
+    }
+
+
     public static void main(String[] args) {
         Application application = new Application();
         application.fillStorage();
@@ -208,6 +246,12 @@ public class Application {
         application.searchCountriesWithComplexOrderDesc();
 
         application.searchCountriesWithComplexOrderAsc();
+
+        application.searchUsersWithOrderAsc();
+
+        application.searchUsersWithOrderDesc();
+
+        application.searchUsersWithComplexOrderAsc();
 
 
         application.deleteUsers();

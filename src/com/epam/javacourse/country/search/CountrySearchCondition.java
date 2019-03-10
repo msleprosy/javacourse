@@ -7,7 +7,7 @@ import com.epam.javacourse.common.business.search.BaseSearchCondition;
  */
 public class CountrySearchCondition extends BaseSearchCondition {
     private String name;
-    private CountryOrderByField countryOrderByField;
+    private CountryOrderByField orderByField;
 
     public String getName() {
         return name;
@@ -18,15 +18,15 @@ public class CountrySearchCondition extends BaseSearchCondition {
     }
 
     public CountryOrderByField getOrderByField() {
-        return countryOrderByField;
+        return orderByField;
     }
 
-    public void setOrderByField(CountryOrderByField countryOrderByField) {
-        this.countryOrderByField = countryOrderByField;
+    public void setOrderByField(CountryOrderByField orderByField) {
+        this.orderByField = orderByField;
     }
 
     public boolean needOrdering() {
-        return super.needOrdering() && countryOrderByField != null;
+        return super.needOrdering() && orderByField != null;
     }
 
 }

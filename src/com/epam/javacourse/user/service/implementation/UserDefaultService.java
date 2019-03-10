@@ -4,7 +4,10 @@ import com.epam.javacourse.user.domain.SimpleUser;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.domain.VeryImportantUser;
 import com.epam.javacourse.user.repository.UserRepository;
+import com.epam.javacourse.user.search.UserSearchCondition;
 import com.epam.javacourse.user.service.UserService;
+
+import java.util.List;
 
 public class UserDefaultService implements UserService {
 
@@ -18,6 +21,11 @@ public class UserDefaultService implements UserService {
 
     public UserDefaultService(UserRepository userRepository) {
         this.userRepository = userRepository;
+    }
+
+    @Override
+    public List<User> search(UserSearchCondition searchCondition) {
+        return userRepository.search(searchCondition);
     }
 
     @Override

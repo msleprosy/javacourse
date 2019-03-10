@@ -52,6 +52,13 @@ public class User extends BaseDomain {
         this.orders = orders;
     }
 
+    public String getUserAsStr() {
+        return "id = " + id +
+                ", name = '" + name + '\'' +
+                ", lastName = '" + lastName + '\'';
+
+    }
+
     @Override
     public String toString() {
         return "User{" +

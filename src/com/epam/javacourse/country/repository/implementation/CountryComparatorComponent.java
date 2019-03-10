@@ -40,15 +40,6 @@ public class CountryComparatorComponent {
         };
     }
 
-    private static Comparator<Country> getComparatorForCountryField() {
-        return new Comparator<Country>() {
-            @Override
-            public int compare(Country country1, Country country2) {
-                return getComparatorForNullableStrings().compare(country1.getName(), country2.getName());
-            }
-        };
-    }
-
     public Comparator<Country> getComparatorForField(CountryOrderByField field) {
         return comparatorsByField.get(field);
     }
