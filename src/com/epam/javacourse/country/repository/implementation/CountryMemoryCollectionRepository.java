@@ -14,6 +14,8 @@ import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
 import static com.epam.javacourse.memory.Memory.countries;
 
 public class CountryMemoryCollectionRepository implements CountryRepository {
+    private CountryOrderingComponent orderingComponent = new CountryOrderingComponent();
+
     @Override
     public void addCountry(Country country) {
 
@@ -30,14 +32,12 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
-    public void deleteByName(String nameForDeleting){
+    public void deleteByName(String nameForDeleting) {
         deleteCountryByName(nameForDeleting);
     }
 
     @Override
-    public void update(Country country) {
-
-    }
+    public void update(Country country) {}
 
     @Override
     public Country findById(Long id) {
@@ -56,30 +56,39 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
 
     @Override
     public List<Country> search(CountrySearchCondition searchCondition) {
-            if (searchCondition.getId() != null) {
-                return Collections.singletonList(findById(searchCondition.getId()));
-            } else {
-                boolean searchByName = isNotBlank(searchCondition.getName());
+        if (searchCondition.getId() != null) {
+            return Collections.singletonList(findById(searchCondition.getId()));
+        } else {
+            List<Country> result = doSearch(searchCondition);
 
-                List<Country> result = new ArrayList<>();
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
+            }
 
-                for (Country country : countries) {
-                    if (country != null) {
-                        boolean found = true;
+            return result;
+        }
+    }
 
-                        if (searchByName) {
-                            found = searchCondition.getName().equals(country.getName());
-                        }
+    private List<Country> doSearch(CountrySearchCondition searchCondition) {
+        boolean searchByName = isNotBlank(searchCondition.getName());
 
-                        if (found) {
-                            result.add(country);
-                        }
-                    }
+        List<Country> result = new ArrayList<>();
+        for (Country country : countries) {
+            if (country != null) {
+                boolean found = true;
+
+                if (searchByName) {
+                    found = searchCondition.getName().equals(country.getName());
                 }
 
-                return result;
+                if (found) {
+                    result.add(country);
+                }
             }
         }
+        return result;
+    }
 
     @Override
     public void printAll() {
