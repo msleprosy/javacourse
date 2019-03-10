@@ -9,6 +9,7 @@ public class CitySearchCondition extends BaseSearchCondition {
 
     private String name;
     private boolean isCapital;
+    private CityOrderByField orderByField;
 
     public String getName() {
         return name;
@@ -24,5 +25,13 @@ public class CitySearchCondition extends BaseSearchCondition {
 
     public void setCapital(boolean capital) {
         isCapital = capital;
+    }
+
+    public CityOrderByField getOrderByField() {
+        return orderByField;
+    }
+
+    public void setOrderByField(CityOrderByField orderByField) {
+        this.orderByField = orderByField;
     }
 }
