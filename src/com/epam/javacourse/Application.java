@@ -1,6 +1,8 @@
 package com.epam.javacourse;
 
 import com.epam.javacourse.city.domain.City;
+import com.epam.javacourse.city.search.CityOrderByField;
+import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.city.service.CityService;
 import com.epam.javacourse.common.business.application.StorageType;
 import com.epam.javacourse.common.business.application.servicefactory.ServiceSupplier;
@@ -226,6 +228,16 @@ public class Application {
         }
     }
 
+    public void searchCitiesWithOrderAsc() {
+        System.out.println("\n----------Search cities Order ASC ------------");
+        CitySearchCondition citySearchCondition = new CitySearchCondition();
+        citySearchCondition.setOrderDirection(OrderDirection.ASC);
+        citySearchCondition.setOrderByField(CityOrderByField.NAME);
+        List<City> searchResult = cityService.search(citySearchCondition);
+        for (City country : searchResult) {
+            System.out.println(country.getCityAsStr());
+        }
+    }
 
     public static void main(String[] args) {
         Application application = new Application();
@@ -252,6 +264,8 @@ public class Application {
         application.searchUsersWithOrderDesc();
 
         application.searchUsersWithComplexOrderAsc();
+
+     //   application.searchCitiesWithOrderAsc();
 
 
         application.deleteUsers();

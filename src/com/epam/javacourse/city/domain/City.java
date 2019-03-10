@@ -31,6 +31,14 @@ public class City extends BaseDomain {
         isCapital = capital;
     }
 
+    public String getCityAsStr() {
+        return "id = " + id +
+                ", name = '" + name + '\'' +
+                ", population = '" + population + '\'' +
+                ", is capital = '" + isCapital + '\'';
+
+    }
+
     @Override
     public String toString() {
         return "City{" +

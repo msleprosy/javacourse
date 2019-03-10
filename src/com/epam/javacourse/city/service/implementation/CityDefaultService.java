@@ -2,14 +2,22 @@ package com.epam.javacourse.city.service.implementation;
 
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
+import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.city.service.CityService;
+
+import java.util.List;
 
 public class CityDefaultService implements CityService {
 
     private final CityRepository cityRepository;
 
-    public CityDefaultService(CityRepository cityRepository){
+    public CityDefaultService(CityRepository cityRepository) {
         this.cityRepository = cityRepository;
+    }
+
+    @Override
+    public List<City> search(CitySearchCondition searchCondition) {
+        return cityRepository.search(searchCondition);
     }
 
     @Override
@@ -24,7 +32,7 @@ public class CityDefaultService implements CityService {
 
     @Override
     public void update(City city) {
-       cityRepository.update(city);
+        cityRepository.update(city);
     }
 
     @Override
@@ -39,7 +47,7 @@ public class CityDefaultService implements CityService {
 
     @Override
     public void deleteById(Long id) {
-    cityRepository.deleteById(id);
+        cityRepository.deleteById(id);
     }
 
     @Override
