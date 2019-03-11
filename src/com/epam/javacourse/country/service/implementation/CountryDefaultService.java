@@ -2,9 +2,8 @@ package com.epam.javacourse.country.service.implementation;
 
 import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.country.domain.Country;
+import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.country.repository.CountryRepository;
-import com.epam.javacourse.country.search.CountrySearchCondition;
 import com.epam.javacourse.country.service.CountryService;
 
 import java.util.List;
@@ -38,23 +37,13 @@ public class CountryDefaultService implements CountryService {
         countryRepository.deleteByName(nameForDeleting);
     }
 
-   /* @Override
-    public Country findById(Long id) {
-        return countryRepository.findById(id);
-    }
-
-      @Override
-    public Country findByName(String countryName) {
-        return countryRepository.findByName(countryName);
-    }*/
-
-    @Override
-    public List<Country> search(CountrySearchCondition searchCondition) {
-        return countryRepository.search(searchCondition);
-    }
-
     @Override
     public void printAll() {
         countryRepository.printAll();
+    }
+
+    @Override
+    public List search(BaseSearchCondition searchCondition) {
+        return countryRepository.search(searchCondition);
     }
 }

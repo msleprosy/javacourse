@@ -1,6 +1,7 @@
 package com.epam.javacourse.country.repository.implementation;
 
 import com.epam.javacourse.common.business.domain.BaseDomain;
+import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
 import com.epam.javacourse.country.search.CountrySearchCondition;
@@ -56,7 +57,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         return null;
     }*/
 
-    @Override
+   /* @Override
     public List<Country> search(CountrySearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
@@ -71,11 +72,27 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
             return result;
         }
     }
-
+*/
     @Override
     public void printAll() {
         for (Country country : countries) {
             System.out.println(country);
+        }
+    }
+
+    @Override
+    public List search(BaseSearchCondition searchCondition) {
+        if (searchCondition.getId() != null) {
+            return Collections.singletonList(findById(searchCondition.getId()));
+        } else {
+            List<Country> result = doSearch((CountrySearchCondition) searchCondition);
+
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, ((CountrySearchCondition)searchCondition));
+            }
+
+            return result;
         }
     }
 

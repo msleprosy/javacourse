@@ -1,9 +1,12 @@
 package com.epam.javacourse.order.service.implementation;
 
 import com.epam.javacourse.common.business.domain.BaseDomain;
+import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.order.repository.OrderRepository;
 import com.epam.javacourse.order.service.OrderService;
 import com.epam.javacourse.user.service.UserService;
+
+import java.util.List;
 
 public class OrderDefaultService implements OrderService {
 
@@ -37,5 +40,10 @@ public class OrderDefaultService implements OrderService {
 
     public void printAll() {
         orderRepository.printAll();
+    }
+
+    @Override
+    public List search(BaseSearchCondition searchCondition) {
+        return orderRepository.search(searchCondition);
     }
 }

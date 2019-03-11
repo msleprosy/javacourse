@@ -4,6 +4,7 @@ import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.common.business.domain.BaseDomain;
+import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.memory.SequenceGenerator;
 
 import java.util.ArrayList;
@@ -56,7 +57,7 @@ public class CityMemoryCollectionRepository implements CityRepository {
         return null;
     }*/
 
-    @Override
+    /*@Override
     public List<City> search(CitySearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
@@ -70,13 +71,29 @@ public class CityMemoryCollectionRepository implements CityRepository {
 
             return result;
         }
-    }
+    }*/
 
 
     @Override
     public void printAll() {
         for (City city : cities) {
             System.out.println(city);
+        }
+    }
+
+    @Override
+    public List search(BaseSearchCondition searchCondition) {
+        if (searchCondition.getId() != null) {
+            return Collections.singletonList(findById(searchCondition.getId()));
+        } else {
+            List<City> result = doSearch((CitySearchCondition) searchCondition);
+
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, (CitySearchCondition) searchCondition);
+            }
+
+            return result;
         }
     }
 

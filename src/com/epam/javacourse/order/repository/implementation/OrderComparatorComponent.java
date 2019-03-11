@@ -72,29 +72,29 @@ public class OrderComparatorComponent {
     }
 
 
-    public Comparator<User> getComparatorForField(UserOrderByField field) {
+    public Comparator<Order> getComparatorForField(OrderByField field) {
         return comparatorsByField.get(field);
     }
 
-    public Comparator<User> getComplexComparator(UserOrderByField field) {
-        return new Comparator<User>() {
+    public Comparator<Order> getComplexComparator(OrderByField field) {
+        return new Comparator<Order>() {
 
             @Override
-            public int compare(User u1, User u2) {
+            public int compare(Order o1, Order o2) {
                 int result = 0;
-                Comparator<User> countryComparator = comparatorsByField.get(field);
+                Comparator<Order> orderComparator = comparatorsByField.get(field);
 
-                if (countryComparator != null) {
-                    result = countryComparator.compare(u1, u2);
+                if (orderComparator != null) {
+                    result = orderComparator.compare(o1, o2);
                     //if records have same order priority, i want to order them in their group
                     if (result == 0) {
 
                         //loop throug all possible sorting fields
-                        for (UserOrderByField otherField : fieldComparePriorityOrder) {
+                        for (OrderByField otherField : fieldComparePriorityOrder) {
                             //if i haven't sorted by field which is taken from parameter in function, i do sorting
                             if (!otherField.equals(field)) {
 
-                                result = comparatorsByField.get(otherField).compare(u1, u2);
+                                result = comparatorsByField.get(otherField).compare(o1, o2);
                                 //if sort result detected that records are not equals - we exit from loop,
                                 //else continue
                                 if (result != 0) {

@@ -1,6 +1,7 @@
 package com.epam.javacourse.user.repository.implementation;
 
 import com.epam.javacourse.common.business.domain.BaseDomain;
+import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.memory.SequenceGenerator;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.repository.UserRepository;
@@ -58,7 +59,7 @@ public class UserMemoryCollectionRepository implements UserRepository {
         }
     }
 
-    @Override
+   /* @Override
     public List<User> search(UserSearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
@@ -72,13 +73,29 @@ public class UserMemoryCollectionRepository implements UserRepository {
 
             return result;
         }
-    }
+    }*/
 
 
     @Override
     public void printAll() {
         for (User user : users) {
             System.out.println(user);
+        }
+    }
+
+    @Override
+    public List search(BaseSearchCondition searchCondition) {
+        if (searchCondition.getId() != null) {
+            return Collections.singletonList(findById(searchCondition.getId()));
+        } else {
+            List<User> result = doSearch((UserSearchCondition) searchCondition);
+
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, (UserSearchCondition) searchCondition);
+            }
+
+            return result;
         }
     }
 
