@@ -8,15 +8,11 @@ import java.util.List;
 
 public interface CityRepository extends BaseRepository {
 
-    void addCity(City city);
+    //void add(City city);
 
     void deleteByName(String nameForDeleting);
 
-    void update(City city);
-
-    City findById(long id);
-
-    City findByName(String cityName);
+    //void update(City city);
 
     List<City> search(CitySearchCondition searchCondition);
 }

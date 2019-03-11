@@ -3,6 +3,7 @@ package com.epam.javacourse.city.repository.implementation;
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.city.search.CitySearchCondition;
+import com.epam.javacourse.common.business.domain.BaseDomain;
 import com.epam.javacourse.memory.SequenceGenerator;
 
 import java.util.ArrayList;
@@ -17,9 +18,14 @@ public class CityMemoryCollectionRepository implements CityRepository {
     private CityOrderingComponent orderingComponent = new CityOrderingComponent();
 
     @Override
-    public void addCity(City city) {
+    public void add(BaseDomain city) {
         city.setId(SequenceGenerator.getNextValue());
-        cities.add(city);
+        cities.add((City)city);
+    }
+
+    @Override
+    public void update(BaseDomain type) {
+
     }
 
     @Override
@@ -35,17 +41,12 @@ public class CityMemoryCollectionRepository implements CityRepository {
         deleteCityByName(nameForDeleting);
     }
 
-    @Override
+   /* @Override
     public void update(City city) {
 
-    }
+    }*/
 
-    @Override
-    public City findById(long id) {
-        return findCityById(id);
-    }
-
-    @Override
+   /* @Override
     public City findByName(String cityName) {
         for (City city : cities) {
             if (cityName.equals(city.getName())) {
@@ -53,7 +54,7 @@ public class CityMemoryCollectionRepository implements CityRepository {
             }
         }
         return null;
-    }
+    }*/
 
     @Override
     public List<City> search(CitySearchCondition searchCondition) {
@@ -79,6 +80,10 @@ public class CityMemoryCollectionRepository implements CityRepository {
         }
     }
 
+
+    private City findById(long id) {
+        return findCityById(id);
+    }
 
     private List<City> doSearch(CitySearchCondition searchCondition) {
         boolean searchByName = isNotBlank(searchCondition.getName());

@@ -8,15 +8,9 @@ import java.util.List;
 
 public interface UserRepository extends BaseRepository {
 
-    void addUser(User user);
+    //void add(User user);
 
     void deleteByName(String nameForDeleting);
-
-    void update(User user);
-
-    User findById(Long id);
-
-    User findByName(String name);
 
     List<User> search(UserSearchCondition searchCondition);
 }

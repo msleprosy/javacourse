@@ -7,15 +7,9 @@ import com.epam.javacourse.common.business.service.BaseService;
 import java.util.List;
 
 public interface CityService extends BaseService {
-    void addCity(City city);
+    //void add(City city);
 
     void deleteByName(String nameForDeleting);
-
-    void update(City city);
-
-    City findById(long id);
-
-    City findByName(String cityName);
 
     List<City> search(CitySearchCondition searchCondition);
 }

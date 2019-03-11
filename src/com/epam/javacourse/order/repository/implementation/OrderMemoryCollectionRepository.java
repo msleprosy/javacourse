@@ -1,5 +1,6 @@
 package com.epam.javacourse.order.repository.implementation;
 
+import com.epam.javacourse.common.business.domain.BaseDomain;
 import com.epam.javacourse.memory.SequenceGenerator;
 import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.repository.OrderRepository;
@@ -9,22 +10,22 @@ import static com.epam.javacourse.memory.Memory.orders;
 public class OrderMemoryCollectionRepository implements OrderRepository {
 
     @Override
-    public void addOrder(Order order) {
+    public void add(BaseDomain order) {
         order.setId(SequenceGenerator.getNextValue());
-        orders.add(order);
+        orders.add((Order)order);
+    }
+
+    @Override
+    public void update(BaseDomain type) {
+
     }
 
     @Override
     public void deleteById(long id) {
-        Order found = findOrderById(id);
+        Order found = findById(id);
         if (found != null) {
             orders.remove(found);
         }
-    }
-
-    @Override
-    public Order findById(Long id) {
-        return findOrderById(id);
     }
 
     @Override
@@ -34,7 +35,7 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
         }
     }
 
-    private Order findOrderById(long orderId) {
+    private Order findById(long orderId) {
         for (Order order : orders) {
             if (Long.valueOf(orderId).equals(order.getId())) {
                 return order;

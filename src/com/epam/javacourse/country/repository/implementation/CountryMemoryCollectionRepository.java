@@ -1,5 +1,6 @@
 package com.epam.javacourse.country.repository.implementation;
 
+import com.epam.javacourse.common.business.domain.BaseDomain;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
 import com.epam.javacourse.country.search.CountrySearchCondition;
@@ -17,10 +18,14 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     private CountryOrderingComponent orderingComponent = new CountryOrderingComponent();
 
     @Override
-    public void addCountry(Country country) {
-
+    public void add(BaseDomain country) {
         country.setId(SequenceGenerator.getNextValue());
-        countries.add(country);
+        countries.add((Country) country);
+    }
+
+    @Override
+    public void update(BaseDomain type) {
+
     }
 
     @Override
@@ -36,16 +41,12 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         deleteCountryByName(nameForDeleting);
     }
 
-    @Override
+   /* @Override
     public void update(Country country) {
-    }
+    }*/
 
-    @Override
-    public Country findById(Long id) {
-        return findCountryById(id);
-    }
 
-    @Override
+   /* @Override
     public Country findByName(String countryName) {
         for (Country country : countries) {
             if (countryName.equals(country.getName())) {
@@ -53,7 +54,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
             }
         }
         return null;
-    }
+    }*/
 
     @Override
     public List<Country> search(CountrySearchCondition searchCondition) {
@@ -76,6 +77,10 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         for (Country country : countries) {
             System.out.println(country);
         }
+    }
+
+    private Country findById(Long id) {
+        return findCountryById(id);
     }
 
     private List<Country> doSearch(CountrySearchCondition searchCondition) {

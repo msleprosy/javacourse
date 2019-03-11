@@ -1,5 +1,6 @@
 package com.epam.javacourse.user.service.implementation;
 
+import com.epam.javacourse.common.business.domain.BaseDomain;
 import com.epam.javacourse.user.domain.SimpleUser;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.domain.VeryImportantUser;
@@ -38,34 +39,22 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public void addUser(User user) {
-        userRepository.addUser(user);
-    }
-
-    @Override
     public void deleteByName(String nameForDeleting) {
         userRepository.deleteByName(nameForDeleting);
     }
 
     @Override
-    public void update(User user) {
-        userRepository.update(user);
+    public void add(BaseDomain user) {
+        userRepository.add(user);
+    }
+
+    @Override
+    public void update(BaseDomain type) {
     }
 
     @Override
     public void deleteById(Long id) {
         userRepository.deleteById(id);
-    }
-
-
-    @Override
-    public User findById(Long id) {
-        return userRepository.findById(id);
-    }
-
-    @Override
-    public User findByName(String name) {
-        return userRepository.findByName(name);
     }
 
     @Override

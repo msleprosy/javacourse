@@ -1,9 +1,10 @@
 package com.epam.javacourse.order.service;
 
-import com.epam.javacourse.order.domain.Order;
+import com.epam.javacourse.common.business.service.BaseService;
 
-public interface OrderService {
+public interface OrderService extends BaseService {
     void evaluateOrderPriceByUserType(double price);
-    void addOrder(Order order);
-    Order findById(Long id);
+
+    //void addOrder(Order order);
+
 }

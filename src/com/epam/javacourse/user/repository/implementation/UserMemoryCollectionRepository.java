@@ -1,5 +1,6 @@
 package com.epam.javacourse.user.repository.implementation;
 
+import com.epam.javacourse.common.business.domain.BaseDomain;
 import com.epam.javacourse.memory.SequenceGenerator;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.repository.UserRepository;
@@ -17,27 +18,16 @@ public class UserMemoryCollectionRepository implements UserRepository {
     private UserOrderingComponent orderingComponent = new UserOrderingComponent();
 
     @Override
-    public void addUser(User user) {
-        user.setId(SequenceGenerator.getNextValue());
-        users.add(user);
-    }
-
-    @Override
     public void deleteByName(String nameForDeleting) {
         deleteUserByName(nameForDeleting);
     }
 
-    @Override
+    /*@Override
     public void update(User user) {
 
-    }
+    }*/
 
-    @Override
-    public User findById(Long id) {
-        return findUserById(id);
-    }
-
-    @Override
+   /* @Override
     public User findByName(String name) {
         for (User user : users) {
             if (name.equals(user.getName())) {
@@ -45,6 +35,18 @@ public class UserMemoryCollectionRepository implements UserRepository {
             }
         }
         return null;
+    }*/
+
+
+    @Override
+    public void add(BaseDomain user) {
+        user.setId(SequenceGenerator.getNextValue());
+        users.add((User)user);
+    }
+
+    @Override
+    public void update(BaseDomain type) {
+
     }
 
     @Override
@@ -78,6 +80,10 @@ public class UserMemoryCollectionRepository implements UserRepository {
         for (User user : users) {
             System.out.println(user);
         }
+    }
+
+    private User findById(Long id) {
+        return findUserById(id);
     }
 
     private List<User> doSearch(UserSearchCondition searchCondition) {

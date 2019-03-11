@@ -33,9 +33,9 @@ public class Application {
 
     private void addUsers() {
         String[] usersAsCsv = new String[]{
-                "Dmitry        | Ivanov | 21",
+                "Dmitry        | yuspov | 21",
                 "Petr        | Petrov | 23",
-                "Dmitry      | yuspov | 31",
+                "Dmitry      | Ivanov | 31",
                 "Dasha       | Jukova | 25",
                 "Wlad        | Belyh  | 23",
                 "Terminator  | T-800  | 125",
@@ -45,7 +45,7 @@ public class Application {
             String[] userAttrs = csvUser.split("\\|");
 
             int attrIndex = -1;
-            userService.addUser(new User(userAttrs[++attrIndex].trim(),
+            userService.add(new User(userAttrs[++attrIndex].trim(),
                     userAttrs[++attrIndex].trim(),
                     userAttrs[++attrIndex].trim())
             );
@@ -105,7 +105,7 @@ public class Application {
             country.getCities()[i] = city;
         }
 
-        countryService.addCountry(country);
+        countryService.add(country);
 
     }
 
@@ -134,7 +134,7 @@ public class Application {
         for (Country country : searchResult) {
             System.out.println(country);
         }
-        userService.addUser(new User("SSSS", "AAAA", "333"));
+        userService.add(new User("SSSS", "AAAA", "333"));
         userService.deleteById(33L);
     }
 

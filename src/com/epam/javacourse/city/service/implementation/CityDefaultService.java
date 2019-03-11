@@ -4,6 +4,7 @@ import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.city.service.CityService;
+import com.epam.javacourse.common.business.domain.BaseDomain;
 
 import java.util.List;
 
@@ -21,28 +22,17 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
-    public void addCity(City city) {
-        cityRepository.addCity(city);
-    }
-
-    @Override
     public void deleteByName(String nameForDeleting) {
         cityRepository.deleteByName(nameForDeleting);
     }
 
     @Override
-    public void update(City city) {
-        cityRepository.update(city);
+    public void add(BaseDomain city) {
+        cityRepository.add(city);
     }
 
     @Override
-    public City findById(long id) {
-        return cityRepository.findById(id);
-    }
-
-    @Override
-    public City findByName(String cityName) {
-        return cityRepository.findByName(cityName);
+    public void update(BaseDomain type) {
     }
 
     @Override

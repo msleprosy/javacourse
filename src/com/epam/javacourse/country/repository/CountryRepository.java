@@ -8,15 +8,9 @@ import java.util.List;
 
 public interface CountryRepository extends BaseRepository {
 
-    void addCountry(Country country);
+    //void add(Country country);
 
     void deleteByName(String nameForDeleting);
-
-    void update(Country country);
-
-    Country findById(Long id);
-
-    Country findByName(String countryName);
 
     List<Country> search(CountrySearchCondition searchCondition);
 }
