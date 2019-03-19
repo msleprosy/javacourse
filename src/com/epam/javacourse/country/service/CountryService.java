@@ -1,11 +1,11 @@
 package com.epam.javacourse.country.service;
 
-import com.epam.javacourse.common.business.service.BaseService;
+import com.epam.javacourse.common.solutions.service.BaseService;
+import com.epam.javacourse.country.domain.Country;
+import com.epam.javacourse.country.search.CountrySearchCondition;
 
-public interface CountryService extends BaseService {
-    //void add(Country country);
+import java.util.List;
 
-    void deleteByName(String nameForDeleting);
-
-    //List<Country> search(CountrySearchCondition searchCondition);
+public interface CountryService extends BaseService<Country, Long> {
+    List<Country> search(CountrySearchCondition searchCondition);
 }

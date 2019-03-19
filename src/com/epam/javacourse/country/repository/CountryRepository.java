@@ -1,12 +1,12 @@
 package com.epam.javacourse.country.repository;
 
-import com.epam.javacourse.common.business.repository.BaseRepository;
+import com.epam.javacourse.common.solutions.repository.BaseRepository;
+import com.epam.javacourse.country.domain.Country;
+import com.epam.javacourse.country.search.CountrySearchCondition;
 
-public interface CountryRepository extends BaseRepository {
+import java.util.List;
 
-    //void add(Country country);
+public interface CountryRepository extends BaseRepository<Country, Long> {
 
-    void deleteByName(String nameForDeleting);
-
-    //List<Country> search(CountrySearchCondition searchCondition);
+    List<Country> search(CountrySearchCondition searchCondition);
 }

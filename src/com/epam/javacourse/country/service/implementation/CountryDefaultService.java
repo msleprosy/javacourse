@@ -1,9 +1,9 @@
 package com.epam.javacourse.country.service.implementation;
 
 import com.epam.javacourse.city.repository.CityRepository;
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
+import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
+import com.epam.javacourse.country.search.CountrySearchCondition;
 import com.epam.javacourse.country.service.CountryService;
 
 import java.util.List;
@@ -18,13 +18,18 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void add(BaseDomain country) {
-        countryRepository.add(country);
+    public void add(Country entity) {
+        countryRepository.add(entity);
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public void update(Country entity) {
 
+    }
+
+    @Override
+    public Country findById(Long id) {
+        return countryRepository.findById(id);
     }
 
     @Override
@@ -33,8 +38,10 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public void deleteByName(String nameForDeleting) {
-        countryRepository.deleteByName(nameForDeleting);
+    public void delete(Country entity) {
+        if (entity.getId() != null) {
+            this.deleteById(entity.getId());
+        }
     }
 
     @Override
@@ -43,7 +50,7 @@ public class CountryDefaultService implements CountryService {
     }
 
     @Override
-    public List search(BaseSearchCondition searchCondition) {
+    public List<Country> search(CountrySearchCondition searchCondition) {
         return countryRepository.search(searchCondition);
     }
 }

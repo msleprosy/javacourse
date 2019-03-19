@@ -1,7 +1,5 @@
 package com.epam.javacourse.country.repository.implementation;
 
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
 import com.epam.javacourse.country.search.CountrySearchCondition;
@@ -19,33 +17,28 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     private CountryOrderingComponent orderingComponent = new CountryOrderingComponent();
 
     @Override
-    public void add(BaseDomain country) {
-        country.setId(SequenceGenerator.getNextValue());
-        countries.add((Country) country);
+    public void add(Country entity) {
+        entity.setId(SequenceGenerator.getNextValue());
+        countries.add((Country) entity);
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public void update(Country entity) {
 
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Country found = findCountryById(id);
         if (found != null) {
             countries.remove(found);
         }
     }
 
-    @Override
+   /* @Override
     public void deleteByName(String nameForDeleting) {
         deleteCountryByName(nameForDeleting);
     }
-
-   /* @Override
-    public void update(Country country) {
-    }*/
-
 
    /* @Override
     public Country findByName(String countryName) {
@@ -57,7 +50,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         return null;
     }*/
 
-   /* @Override
+    @Override
     public List<Country> search(CountrySearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
@@ -72,7 +65,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
             return result;
         }
     }
-*/
+
     @Override
     public void printAll() {
         for (Country country : countries) {
@@ -80,23 +73,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         }
     }
 
-    @Override
-    public List search(BaseSearchCondition searchCondition) {
-        if (searchCondition.getId() != null) {
-            return Collections.singletonList(findById(searchCondition.getId()));
-        } else {
-            List<Country> result = doSearch((CountrySearchCondition) searchCondition);
-
-            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
-            if (needOrdering) {
-                orderingComponent.applyOrdering(result, ((CountrySearchCondition)searchCondition));
-            }
-
-            return result;
-        }
-    }
-
-    private Country findById(Long id) {
+    public Country findById(Long id) {
         return findCountryById(id);
     }
 

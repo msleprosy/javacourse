@@ -1,7 +1,5 @@
 package com.epam.javacourse.city.repository;
 
-import com.epam.javacourse.common.business.repository.BaseRepository;
-
 public interface CityRepository extends BaseRepository {
 
     //void add(City city);
