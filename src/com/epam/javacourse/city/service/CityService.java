@@ -1,11 +1,12 @@
 package com.epam.javacourse.city.service;
 
-import com.epam.javacourse.common.business.service.BaseService;
+import com.epam.javacourse.city.domain.City;
+import com.epam.javacourse.city.search.CitySearchCondition;
+import com.epam.javacourse.common.solutions.service.BaseService;
 
-public interface CityService extends BaseService {
-    //void add(City city);
+import java.util.List;
 
-    void deleteByName(String nameForDeleting);
+public interface CityService extends BaseService<City, Long> {
 
-    //List<City> search(CitySearchCondition searchCondition);
+    List<City> search(CitySearchCondition searchCondition);
 }

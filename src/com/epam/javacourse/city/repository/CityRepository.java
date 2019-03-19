@@ -1,12 +1,11 @@
 package com.epam.javacourse.city.repository;
 
-public interface CityRepository extends BaseRepository {
+import com.epam.javacourse.city.domain.City;
+import com.epam.javacourse.city.search.CitySearchCondition;
+import com.epam.javacourse.common.solutions.repository.BaseRepository;
 
-    //void add(City city);
+import java.util.List;
 
-    void deleteByName(String nameForDeleting);
-
-    //void update(City city);
-
-    //List<City> search(CitySearchCondition searchCondition);
+public interface CityRepository extends BaseRepository<City, Long> {
+    List<City> search(CitySearchCondition searchCondition);
 }

@@ -1,9 +1,9 @@
 package com.epam.javacourse.city.service.implementation;
 
+import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
+import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.city.service.CityService;
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
 
 import java.util.List;
 
@@ -16,22 +16,38 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
-    public void deleteByName(String nameForDeleting) {
-        cityRepository.deleteByName(nameForDeleting);
+    public void add(City entity) {
+        if (entity != null) {
+            cityRepository.add(entity);
+        }
     }
 
     @Override
-    public void add(BaseDomain city) {
-        cityRepository.add(city);
+    public void update(City entity) {
+
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public City findById(Long id) {
+        if (id != null) {
+            return cityRepository.findById(id);
+        } else {
+            return null;
+        }
     }
 
     @Override
     public void deleteById(Long id) {
-        cityRepository.deleteById(id);
+        if (id != null) {
+            cityRepository.deleteById(id);
+        }
+    }
+
+    @Override
+    public void delete(City entity) {
+        if (entity.getId() != null) {
+            this.deleteById(entity.getId());
+        }
     }
 
     @Override
@@ -40,7 +56,7 @@ public class CityDefaultService implements CityService {
     }
 
     @Override
-    public List search(BaseSearchCondition searchCondition) {
+    public List<City> search(CitySearchCondition searchCondition) {
         return cityRepository.search(searchCondition);
     }
 }

@@ -3,8 +3,6 @@ package com.epam.javacourse.city.repository.implementation;
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.city.search.CitySearchCondition;
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.memory.SequenceGenerator;
 
 import java.util.ArrayList;
@@ -19,33 +17,23 @@ public class CityMemoryCollectionRepository implements CityRepository {
     private CityOrderingComponent orderingComponent = new CityOrderingComponent();
 
     @Override
-    public void add(BaseDomain city) {
-        city.setId(SequenceGenerator.getNextValue());
-        cities.add((City)city);
+    public void add(City entity) {
+        entity.setId(SequenceGenerator.getNextValue());
+        cities.add(entity);
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public void update(City entity) {
 
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         City found = findCityById(id);
         if (found != null) {
             cities.remove(found);
         }
     }
-
-    @Override
-    public void deleteByName(String nameForDeleting) {
-        deleteCityByName(nameForDeleting);
-    }
-
-   /* @Override
-    public void update(City city) {
-
-    }*/
 
    /* @Override
     public City findByName(String cityName) {
@@ -57,7 +45,7 @@ public class CityMemoryCollectionRepository implements CityRepository {
         return null;
     }*/
 
-    /*@Override
+    @Override
     public List<City> search(CitySearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
@@ -71,8 +59,12 @@ public class CityMemoryCollectionRepository implements CityRepository {
 
             return result;
         }
-    }*/
+    }
 
+    @Override
+    public City findById(Long id) {
+            return findById(id);
+    }
 
     @Override
     public void printAll() {
@@ -80,23 +72,6 @@ public class CityMemoryCollectionRepository implements CityRepository {
             System.out.println(city);
         }
     }
-
-    @Override
-    public List search(BaseSearchCondition searchCondition) {
-        if (searchCondition.getId() != null) {
-            return Collections.singletonList(findById(searchCondition.getId()));
-        } else {
-            List<City> result = doSearch((CitySearchCondition) searchCondition);
-
-            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
-            if (needOrdering) {
-                orderingComponent.applyOrdering(result, (CitySearchCondition) searchCondition);
-            }
-
-            return result;
-        }
-    }
-
 
     private City findById(long id) {
         return findCityById(id);

@@ -38,12 +38,18 @@ public class CountryDefaultService implements CountryService {
 
     @Override
     public Country findById(Long id) {
-        return countryRepository.findById(id);
+        if (id != null) {
+            return countryRepository.findById(id);
+        } else {
+            return null;
+        }
     }
 
     @Override
     public void deleteById(Long id) {
-        countryRepository.deleteById(id);
+        if (id != null) {
+            countryRepository.deleteById(id);
+        }
     }
 
     @Override

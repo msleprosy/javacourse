@@ -19,7 +19,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     @Override
     public void add(Country entity) {
         entity.setId(SequenceGenerator.getNextValue());
-        countries.add((Country) entity);
+        countries.add(entity);
     }
 
     @Override
@@ -74,7 +74,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     public Country findById(Long id) {
-        return findCountryById(id);
+            return findCountryById(id);
     }
 
     private List<Country> doSearch(CountrySearchCondition searchCondition) {
