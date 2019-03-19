@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8559fe7b-8b5e-4e31-b515-167b2f207361" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/repository/BaseRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/service/BaseService.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/BaseRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/service/BaseService.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/city/repository/CityRepository.class" afterPath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/city/repository/CityRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/city/service/CityService.class" afterPath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/city/service/CityService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/country/repository/CountryRepository.class" afterPath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/country/repository/CountryRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/country/service/CountryService.class" afterPath="$PROJECT_DIR$/out/production/travel_agency/com/epam/javacourse/country/service/CountryService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/service/CountryService.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/country/service/CountryService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/service/implementation/CountryDefaultService.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/country/service/implementation/CountryDefaultService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,13 +69,11 @@
       <file leaf-file-name="CountryDefaultService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/service/implementation/CountryDefaultService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="551">
-              <caret line="42" column="14" lean-forward="false" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+            <state relative-caret-position="371">
+              <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
               <folding>
-                <element signature="e#812#813#0" expanded="true" />
-                <element signature="e#857#858#0" expanded="true" />
-                <element signature="e#974#975#0" expanded="true" />
-                <element signature="e#1027#1028#0" expanded="true" />
+                <element signature="e#1237#1238#0" expanded="true" />
+                <element signature="e#1290#1291#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -887,7 +871,7 @@
       <workItem from="1552132777304" duration="7828000" />
       <workItem from="1552239744801" duration="31422000" />
       <workItem from="1552406692727" duration="1245000" />
-      <workItem from="1552999940454" duration="3190000" />
+      <workItem from="1552999940454" duration="3499000" />
     </task>
     <task id="LOCAL-00001" summary="added domains and searches for all entities, added common repository and service interfaces for city and country">
       <created>1551402469235</created>
@@ -1036,11 +1020,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552274403973</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="added country generics">
+      <created>1553009257003</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1553009257003</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180845000" />
+    <option name="totallyTimeSpent" value="181154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1128,7 +1119,8 @@
     <MESSAGE value="added search for User class." />
     <MESSAGE value="added search for City class." />
     <MESSAGE value="added generics" />
-    <option name="LAST_COMMIT_MESSAGE" value="added generics" />
+    <MESSAGE value="added country generics" />
+    <option name="LAST_COMMIT_MESSAGE" value="added country generics" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1522,13 +1514,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/service/implementation/CountryDefaultService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="551">
-          <caret line="42" column="14" lean-forward="false" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="14" />
+        <state relative-caret-position="371">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
           <folding>
-            <element signature="e#812#813#0" expanded="true" />
-            <element signature="e#857#858#0" expanded="true" />
-            <element signature="e#974#975#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1237#1238#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
           </folding>
         </state>
       </provider>
