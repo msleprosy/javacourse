@@ -1,13 +1,14 @@
 package com.epam.javacourse.user.service;
 
-import com.epam.javacourse.common.business.service.BaseService;
 
-public interface UserService extends BaseService {
+import com.epam.javacourse.common.solutions.service.BaseService;
+import com.epam.javacourse.user.domain.User;
+import com.epam.javacourse.user.search.UserSearchCondition;
+
+import java.util.List;
+
+public interface UserService extends BaseService<User, Long> {
     void evaluateOrderPriceByUserType(double price);
 
-    // void add(User user);
-
-    void deleteByName(String nameForDeleting);
-
-    // List<User> search(UserSearchCondition searchCondition);
+    List<User> search(UserSearchCondition searchCondition);
 }

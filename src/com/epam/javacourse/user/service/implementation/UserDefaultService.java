@@ -1,10 +1,10 @@
 package com.epam.javacourse.user.service.implementation;
 
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.user.domain.SimpleUser;
+import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.domain.VeryImportantUser;
 import com.epam.javacourse.user.repository.UserRepository;
+import com.epam.javacourse.user.search.UserSearchCondition;
 import com.epam.javacourse.user.service.UserService;
 
 import java.util.List;
@@ -33,22 +33,36 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public void deleteByName(String nameForDeleting) {
-        userRepository.deleteByName(nameForDeleting);
+    public void add(User entity) {
+        userRepository.add(entity);
     }
 
     @Override
-    public void add(BaseDomain user) {
-        userRepository.add(user);
+    public void update(User entity) {
+
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public User findById(Long id) {
+        if (id != null) {
+            return userRepository.findById(id);
+        } else {
+        return null;
     }
+}
 
     @Override
     public void deleteById(Long id) {
-        userRepository.deleteById(id);
+        if (id != null) {
+            userRepository.deleteById(id);
+        }
+    }
+
+    @Override
+    public void delete(User entity) {
+        if (entity.getId() != null) {
+            this.deleteById(entity.getId());
+        }
     }
 
     @Override
@@ -57,9 +71,7 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public List search(BaseSearchCondition searchCondition) {
-        {
-            return userRepository.search(searchCondition);
-        }
+    public List<User> search(UserSearchCondition searchCondition) {
+        return userRepository.search(searchCondition);
     }
 }

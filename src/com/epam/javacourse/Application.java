@@ -265,7 +265,7 @@ public class Application {
 
         application.searchUsersWithComplexOrderAsc();
 
-     //   application.searchCitiesWithOrderAsc();
+        application.searchCitiesWithOrderAsc();
 
 
         application.deleteUsers();

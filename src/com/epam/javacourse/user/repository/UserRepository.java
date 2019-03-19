@@ -1,10 +1,11 @@
 package com.epam.javacourse.user.repository;
 
-public interface UserRepository extends BaseRepository {
+import com.epam.javacourse.common.solutions.repository.BaseRepository;
+import com.epam.javacourse.user.domain.User;
+import com.epam.javacourse.user.search.UserSearchCondition;
 
-    //void add(User user);
+import java.util.List;
 
-    void deleteByName(String nameForDeleting);
-
-    //List<User> search(UserSearchCondition searchCondition);
+public interface UserRepository extends BaseRepository<User, Long> {
+List<User> search(UserSearchCondition searchCondition);
 }

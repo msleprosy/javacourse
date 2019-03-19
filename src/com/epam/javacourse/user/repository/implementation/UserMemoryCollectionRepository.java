@@ -1,7 +1,5 @@
 package com.epam.javacourse.user.repository.implementation;
 
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.memory.SequenceGenerator;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.repository.UserRepository;
@@ -9,7 +7,6 @@ import com.epam.javacourse.user.search.UserSearchCondition;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
@@ -19,47 +16,29 @@ public class UserMemoryCollectionRepository implements UserRepository {
     private UserOrderingComponent orderingComponent = new UserOrderingComponent();
 
     @Override
-    public void deleteByName(String nameForDeleting) {
-        deleteUserByName(nameForDeleting);
-    }
-
-    /*@Override
-    public void update(User user) {
-
-    }*/
-
-   /* @Override
-    public User findByName(String name) {
-        for (User user : users) {
-            if (name.equals(user.getName())) {
-                return user;
-            }
-        }
-        return null;
-    }*/
-
-
-    @Override
-    public void add(BaseDomain user) {
-        user.setId(SequenceGenerator.getNextValue());
-        users.add((User)user);
+    public void add(User entity) {
+        entity.setId(SequenceGenerator.getNextValue());
+        users.add(entity);
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public void update(User entity) {
 
     }
 
+    public User findById(Long id) {
+        return findUserById(id);
+    }
+
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         User found = findUserById(id);
         if (found != null) {
             users.remove(found);
-            ;
         }
     }
 
-   /* @Override
+    @Override
     public List<User> search(UserSearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
@@ -73,7 +52,7 @@ public class UserMemoryCollectionRepository implements UserRepository {
 
             return result;
         }
-    }*/
+    }
 
 
     @Override
@@ -83,25 +62,6 @@ public class UserMemoryCollectionRepository implements UserRepository {
         }
     }
 
-    @Override
-    public List search(BaseSearchCondition searchCondition) {
-        if (searchCondition.getId() != null) {
-            return Collections.singletonList(findById(searchCondition.getId()));
-        } else {
-            List<User> result = doSearch((UserSearchCondition) searchCondition);
-
-            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
-            if (needOrdering) {
-                orderingComponent.applyOrdering(result, (UserSearchCondition) searchCondition);
-            }
-
-            return result;
-        }
-    }
-
-    private User findById(Long id) {
-        return findUserById(id);
-    }
 
     private List<User> doSearch(UserSearchCondition searchCondition) {
         boolean searchByName = isNotBlank(searchCondition.getName());
@@ -132,7 +92,7 @@ public class UserMemoryCollectionRepository implements UserRepository {
         return null;
     }
 
-    private void deleteUserByName(String nameForDeleting) {
+/*    private void deleteUserByName(String nameForDeleting) {
         Iterator<User> iter = users.iterator();
         while (iter.hasNext()) {
             String userName = iter.next().getName();
@@ -140,6 +100,6 @@ public class UserMemoryCollectionRepository implements UserRepository {
                 iter.remove();
             }
         }
-    }
+    }*/
 }
 
