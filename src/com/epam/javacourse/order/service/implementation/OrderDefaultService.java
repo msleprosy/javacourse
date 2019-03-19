@@ -1,8 +1,8 @@
 package com.epam.javacourse.order.service.implementation;
 
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
+import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.repository.OrderRepository;
+import com.epam.javacourse.order.search.OrderSearchCondition;
 import com.epam.javacourse.order.service.OrderService;
 import com.epam.javacourse.user.service.UserService;
 
@@ -19,31 +19,50 @@ public class OrderDefaultService implements OrderService {
         this.userService = userService;
     }
 
+    @Override
     public void evaluateOrderPriceByUserType(double price) {
         userService.evaluateOrderPriceByUserType(price);
     }
 
     @Override
-    public void add(BaseDomain order) {
-        orderRepository.add(order);
+    public void add(Order entity) {
+        orderRepository.add(entity);
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public void update(Order entity) {
 
+    }
+
+    @Override
+    public Order findById(Long id) {
+        if (id != null) {
+            return orderRepository.findById(id);
+        } else {
+            return null;
+        }
     }
 
     @Override
     public void deleteById(Long id) {
+        if (id != null) {
+            orderRepository.deleteById(id);
+        }
+    }
 
+    @Override
+    public void delete(Order entity) {
+        if (entity.getId() != null) {
+            this.deleteById(entity.getId());
+        }
+    }
+
+    @Override
+    public List<Order> search(OrderSearchCondition searchCondition) {
+        return orderRepository.search(searchCondition);
     }
 
     public void printAll() {
         orderRepository.printAll();
-    }
-
-    @Override
-    public List search(BaseSearchCondition searchCondition) {
-        return orderRepository.search(searchCondition);
     }
 }

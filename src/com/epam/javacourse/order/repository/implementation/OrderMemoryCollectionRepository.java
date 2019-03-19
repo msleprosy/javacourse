@@ -1,7 +1,5 @@
 package com.epam.javacourse.order.repository.implementation;
 
-import com.epam.javacourse.common.business.domain.BaseDomain;
-import com.epam.javacourse.common.business.search.BaseSearchCondition;
 import com.epam.javacourse.memory.SequenceGenerator;
 import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.repository.OrderRepository;
@@ -18,21 +16,37 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     private OrderOrderingComponent orderingComponent = new OrderOrderingComponent();
 
     @Override
-    public void add(BaseDomain order) {
-        order.setId(SequenceGenerator.getNextValue());
-        orders.add((Order)order);
+    public void add(Order entity) {
+        entity.setId(SequenceGenerator.getNextValue());
+        orders.add(entity);
     }
 
     @Override
-    public void update(BaseDomain type) {
+    public void update(Order entity) {
 
     }
 
     @Override
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         Order found = findById(id);
         if (found != null) {
             orders.remove(found);
+        }
+    }
+
+    @Override
+    public List<Order> search(OrderSearchCondition searchCondition) {
+        if (searchCondition.getId() != null) {
+            return Collections.singletonList(findById(searchCondition.getId()));
+        } else {
+            List<Order> result = doSearch(searchCondition);
+
+            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
+            if (needOrdering) {
+                orderingComponent.applyOrdering(result, searchCondition);
+            }
+
+            return result;
         }
     }
 
@@ -44,23 +58,11 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     }
 
     @Override
-    public List search(BaseSearchCondition searchCondition) {
-        if (searchCondition.getId() != null) {
-            return Collections.singletonList(findById(searchCondition.getId()));
-        } else {
-            List<Order> result = doSearch((OrderSearchCondition) searchCondition);
-
-            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
-            if (needOrdering) {
-                orderingComponent.applyOrdering(result, ((OrderSearchCondition)searchCondition));
-            }
-
-            return result;
-        }
+    public Order findById(Long id) {
+        return findOrderById(id);
     }
 
-
-    private Order findById(long orderId) {
+    private Order findOrderById(long orderId) {
         for (Order order : orders) {
             if (Long.valueOf(orderId).equals(order.getId())) {
                 return order;

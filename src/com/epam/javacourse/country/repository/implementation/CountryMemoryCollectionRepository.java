@@ -7,7 +7,6 @@ import com.epam.javacourse.memory.SequenceGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
@@ -73,6 +72,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         }
     }
 
+    @Override
     public Country findById(Long id) {
             return findCountryById(id);
     }
@@ -106,7 +106,7 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         return null;
     }
 
-    private void deleteCountryByName(String nameForDeleting) {
+/*    private void deleteCountryByName(String nameForDeleting) {
         Iterator<Country> iter = countries.iterator();
         while (iter.hasNext()) {
             String countryName = iter.next().getName();
@@ -114,5 +114,5 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
                 iter.remove();
             }
         }
-    }
+    }*/
 }

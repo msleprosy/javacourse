@@ -7,7 +7,6 @@ import com.epam.javacourse.memory.SequenceGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
@@ -63,7 +62,7 @@ public class CityMemoryCollectionRepository implements CityRepository {
 
     @Override
     public City findById(Long id) {
-            return findById(id);
+            return findCityById(id);
     }
 
     @Override
@@ -71,10 +70,6 @@ public class CityMemoryCollectionRepository implements CityRepository {
         for (City city : cities) {
             System.out.println(city);
         }
-    }
-
-    private City findById(long id) {
-        return findCityById(id);
     }
 
     private List<City> doSearch(CitySearchCondition searchCondition) {
@@ -107,7 +102,7 @@ public class CityMemoryCollectionRepository implements CityRepository {
         return null;
     }
 
-    private void deleteCityByName(String nameForDeleting) {
+/*    private void deleteCityByName(String nameForDeleting) {
         Iterator<City> iter = cities.iterator();
         while (iter.hasNext()) {
             String cityName = iter.next().getName();
@@ -115,5 +110,5 @@ public class CityMemoryCollectionRepository implements CityRepository {
                 iter.remove();
             }
         }
-    }
+    }*/
 }
