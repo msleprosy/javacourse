@@ -8,17 +8,24 @@ import com.epam.javacourse.common.business.application.StorageType;
 import com.epam.javacourse.common.business.application.servicefactory.ServiceSupplier;
 import com.epam.javacourse.common.business.search.OrderDirection;
 import com.epam.javacourse.common.business.search.OrderType;
-import com.epam.javacourse.common.solutions.dataclasses.Pair;
+import com.epam.javacourse.common.solutions.utils.FileUtils;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.search.CountryOrderByField;
 import com.epam.javacourse.country.search.CountrySearchCondition;
 import com.epam.javacourse.country.service.CountryService;
+import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.service.OrderService;
+import com.epam.javacourse.storage.initor.StorageInitor;
+import com.epam.javacourse.storage.initor.StorageInitorConstants;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.search.UserOrderByField;
 import com.epam.javacourse.user.search.UserSearchCondition;
 import com.epam.javacourse.user.service.UserService;
 
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Application {
@@ -30,6 +37,29 @@ public class Application {
     private CountryService countryService = ServiceSupplier.getInstance().getCountryService();
     private CityService cityService = ServiceSupplier.getInstance().getCityService();
     private OrderService orderService = ServiceSupplier.getInstance().getOrderService();
+
+    public void fillStorage() throws Exception {
+        addUsers();
+        StorageInitor storageInitor = new StorageInitor(countryService);
+        File fileWithInitData = null;
+        try {
+            fileWithInitData = FileUtils
+                    .createFileFromResource("init-data", ".txt", StorageInitorConstants.INIT_DATA_TXT_FILE);
+            storageInitor.initStorageWithCountriesAndCities(fileWithInitData.getAbsolutePath(), StorageInitor.DataSourceType.TXT_FILE);
+        } catch (AutoServiceCheckedException e) {
+            System.out.println("ERROR while init storage: " + e.getMessage());
+            throw e;
+        } catch (Exception e) {
+            System.out.println("Error: Unknown magic :" + e.getMessage());
+            throw e;
+        } finally {
+            if (fileWithInitData != null) {
+                Files.delete(Paths.get(fileWithInitData.toURI()));
+            }
+        }
+        appendOrdersToUsers();
+
+    }
 
     private void addUsers() {
         String[] usersAsCsv = new String[]{
@@ -52,7 +82,38 @@ public class Application {
         }
     }
 
-    private void addCountriesWithCities() {
+    private void appendOrdersToUsers() {
+        List<Country> countries = countryService.findAll();
+        List<User> users = userService.findAll();
+
+        List<Order> orders = new ArrayList<>();
+        int i = 0;
+        for (User user : users) {
+            i++;
+            orders.add(prepareOrderForUser(user, countries));
+
+            if (i % 2 == 0) {
+                orders.add(prepareOrderForUser(user, countries));
+            }
+        }
+
+        for (Order order : orders) {
+            orderService.add(order);
+        }
+    }
+
+    private Order prepareOrderForUser(User user, List<Country> countries) {
+        Order order = new Order();
+        order.setUser(user);
+        Country country = countries.get(getRandomInt(0, countries.size() - 1));
+        order.setCountry(country);
+        order.setCity(country.getCities().get(getRandomInt(0, country.getCities().size() - 1)));
+        order.setPrice(getRandomInt(1, 100000));
+
+        return order;
+    }
+
+/*    private void addCountriesWithCities() {
         Pair[] countriesWithCities = new Pair[]{
                 new Pair("Japan | japanese",
                         new String[]{
@@ -108,12 +169,12 @@ public class Application {
         countryService.add(country);
 
     }
+*/
 
-
-    public void fillStorage() {
+   /* public void fillStorage() {
         addUsers();
         addCountriesWithCities();
-    }
+    }*/
 
     public void printUsers() {
         userService.printAll();
@@ -238,6 +299,29 @@ public class Application {
             System.out.println(country.getCityAsStr());
         }
     }
+
+    public void demoReporting() {
+        ReportProvider reportProvider = new ReportProvider(userService, orderService, countryService, cityService);
+
+        File fileWithReport = null;
+        try {
+            fileWithReport = reportProvider.getUserOrdersTextFileReport();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+
+            if (fileWithReport != null) {
+                System.out.println("File with report '" + fileWithReport.getAbsolutePath() + "'");
+                    /*
+                    //uncomment line to delete temp file
+                    boolean deleted = fileWithReport.delete();
+                    if (!deleted) {
+                        System.out.println("OOps, can't delete file " + fileWithReport.getAbsolutePath());
+                    }*/
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         Application application = new Application();

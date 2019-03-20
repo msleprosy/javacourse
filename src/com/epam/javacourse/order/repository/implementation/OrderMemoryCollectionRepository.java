@@ -1,6 +1,6 @@
 package com.epam.javacourse.order.repository.implementation;
 
-import com.epam.javacourse.memory.SequenceGenerator;
+import com.epam.javacourse.storage.SequenceGenerator;
 import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.repository.OrderRepository;
 import com.epam.javacourse.order.search.OrderSearchCondition;
@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
-import static com.epam.javacourse.memory.Memory.orders;
+import static com.epam.javacourse.storage.Storage.orders;
 
 public class OrderMemoryCollectionRepository implements OrderRepository {
     private OrderOrderingComponent orderingComponent = new OrderOrderingComponent();

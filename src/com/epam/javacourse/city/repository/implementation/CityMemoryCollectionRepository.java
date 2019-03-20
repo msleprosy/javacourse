@@ -3,14 +3,14 @@ package com.epam.javacourse.city.repository.implementation;
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.city.search.CitySearchCondition;
-import com.epam.javacourse.memory.SequenceGenerator;
+import com.epam.javacourse.storage.SequenceGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
-import static com.epam.javacourse.memory.Memory.cities;
+import static com.epam.javacourse.storage.Storage.cities;
 
 public class CityMemoryCollectionRepository implements CityRepository {
     private CityOrderingComponent orderingComponent = new CityOrderingComponent();

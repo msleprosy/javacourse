@@ -3,14 +3,14 @@ package com.epam.javacourse.country.repository.implementation;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
 import com.epam.javacourse.country.search.CountrySearchCondition;
-import com.epam.javacourse.memory.SequenceGenerator;
+import com.epam.javacourse.storage.SequenceGenerator;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
-import static com.epam.javacourse.memory.Memory.countries;
+import static com.epam.javacourse.storage.Storage.countries;
 
 public class CountryMemoryCollectionRepository implements CountryRepository {
     private CountryOrderingComponent orderingComponent = new CountryOrderingComponent();

@@ -1,4 +1,4 @@
-package com.epam.javacourse.memory;
+package com.epam.javacourse.storage;
 
 public final class SequenceGenerator {
     private static long value = 0;

@@ -1,6 +1,6 @@
 package com.epam.javacourse.user.repository.implementation;
 
-import com.epam.javacourse.memory.SequenceGenerator;
+import com.epam.javacourse.storage.SequenceGenerator;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.repository.UserRepository;
 import com.epam.javacourse.user.search.UserSearchCondition;
@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
-import static com.epam.javacourse.memory.Memory.users;
+import static com.epam.javacourse.storage.Storage.users;
 
 public class UserMemoryCollectionRepository implements UserRepository {
     private UserOrderingComponent orderingComponent = new UserOrderingComponent();

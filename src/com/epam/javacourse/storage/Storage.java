@@ -1,4 +1,4 @@
-package com.epam.javacourse.memory;
+package com.epam.javacourse.storage;
 
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.country.domain.Country;
@@ -8,7 +8,7 @@ import com.epam.javacourse.user.domain.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Memory {
+public class Storage {
     public static List<User> users = new ArrayList<>();
     public static List<Order> orders = new ArrayList<>();
     public static List<Country> countries = new ArrayList<>();
