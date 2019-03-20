@@ -2,6 +2,9 @@ package com.epam.javacourse.storage.initor.datasourcereader;
 
 import com.epam.javacourse.city.domain.City;
 import com.epam.javacourse.country.domain.Country;
+import com.epam.javacourse.country.domain.CountryDiscriminator;
+import com.epam.javacourse.country.domain.CountryWithColdClimate;
+import com.epam.javacourse.country.domain.CountryWithHotClimate;
 import com.epam.javacourse.storage.initor.exception.checked.InvalidCityDiscriminatorException;
 
 import java.io.BufferedReader;
@@ -79,7 +82,7 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
         String[] cityCsv = countryWithCities.toArray(new String[0]);
         return getCountry(countryAsStr, cityCsv);
     }
-
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     private Country getCountry(String countryCsv, String[] citiesCsv) throws InvalidCityDiscriminatorException {
         String[] attrs = countryCsv.split("\\|");
         int attrIndex = -1;
@@ -109,32 +112,31 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
 
         return country;
     }
+//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-    private City createCityByDiscriminator(String discriminatorAsStr) throws InvalidCityDiscriminatorException {
-        if (CityDiscriminator.isDiscriminatorNotExists(discriminatorAsStr)) {
+    private Country createCountryByDiscriminator(String discriminatorAsStr) throws InvalidCityDiscriminatorException {
+        if (CountryDiscriminator.isDiscriminatorNotExists(discriminatorAsStr)) {
             throw new InvalidCityDiscriminatorException(
-                    PARSE_CITY_DISCRIMINATOR_ERROR.getCode(),
-                    PARSE_CITY_DISCRIMINATOR_ERROR.getDescriptionAsFormatStr(discriminatorAsStr)
+                    PARSE_COUNTRY_DISCRIMINATOR_ERROR.getCode(),
+                    PARSE_COUNTRY_DISCRIMINATOR_ERROR.getDescriptionAsFormatStr(discriminatorAsStr)
             );
         } else {
-            CityDiscriminator discriminator = CityDiscriminator.getDiscriminatorByName(discriminatorAsStr);
-            if (CityDiscriminator.TRUCK.equals(discriminator)) {
-                return new TruckModel();
+            CountryDiscriminator discriminator = CountryDiscriminator.getDiscriminatorByName(discriminatorAsStr);
+            if (CountryDiscriminator.COLD_CLIMATE.equals(discriminator)) {
+                return new CountryWithColdClimate();
             }
-            return new PassengerModel();
+            return new CountryWithHotClimate();
         }
     }
 
-    private void appendPassengerAttributes(PassengerModel model, String[] attrs, int attrIndex) {
-        model.setNumberOfAirbags(Integer.parseInt(attrs[++attrIndex].trim()));
-        model.setNumberOfSeats(Integer.parseInt(attrs[++attrIndex].trim()));
-        model.setAudioSystemName(attrs[++attrIndex].trim());
+    private void appendColdClimateAttributes(CountryWithColdClimate country, String[] attrs, int attrIndex) {
+        country.setWithPolarNight(Boolean.parseBoolean(attrs[++attrIndex].trim()));
+        country.setPhoneCode(attrs[++attrIndex].trim());
     }
 
-    private void appendTruckAttributes(TruckModel model, String[] attrs, int attrIndex) {
-        model.setWeight(Integer.parseInt(attrs[++attrIndex].trim()));
-        model.setEmbeddedKitchen("Y".equals(attrs[++attrIndex].trim()));
-        model.setTankSize(Integer.parseInt(attrs[++attrIndex].trim()));
+    private void appendHotAttributes(CountryWithHotClimate country, String[] attrs, int attrIndex) {
+        country.setAverageTemperature(attrs[++attrIndex].trim());
+        country.setHottestMonth(attrs[++attrIndex].trim()););
     }
 }
 
