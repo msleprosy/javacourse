@@ -5,7 +5,7 @@ package com.epam.javacourse.storage.initor.exception;
  */
 public enum InitDataExceptionMeta {
 
-    PARSE_CITY_DISCRIMINATOR_ERROR(1, "Unknown city discriminator '%s'.");
+    PARSE_COUNTRY_DISCRIMINATOR_ERROR(1, "Unknown country discriminator '%s'.");
 
     private int code;
     private String description;
