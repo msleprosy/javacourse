@@ -5,10 +5,13 @@ import com.epam.javacourse.common.business.domain.BaseDomain;
 
 import java.util.List;
 
-public class Country extends BaseDomain {
+public abstract class Country extends BaseDomain {
     private String name;
     private String language;
     private List<City> cities;
+    protected CountryDiscriminator discriminator;
+
+    public Country(){initDiscriminator();}
 
     public Country(String name, String language) {
         this.name = name;
@@ -38,6 +41,8 @@ public class Country extends BaseDomain {
     public void setCities(List<City> cities) {
         this.cities = cities;
     }
+
+    protected abstract void initDiscriminator();
 
     @Override
     public String toString() {
