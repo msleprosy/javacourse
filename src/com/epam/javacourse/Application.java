@@ -6,6 +6,7 @@ import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.city.service.CityService;
 import com.epam.javacourse.common.business.application.StorageType;
 import com.epam.javacourse.common.business.application.servicefactory.ServiceSupplier;
+import com.epam.javacourse.common.business.exception.TravelAgencyCheckedException;
 import com.epam.javacourse.common.business.search.OrderDirection;
 import com.epam.javacourse.common.business.search.OrderType;
 import com.epam.javacourse.common.solutions.utils.FileUtils;
@@ -46,7 +47,7 @@ public class Application {
             fileWithInitData = FileUtils
                     .createFileFromResource("init-data", ".txt", StorageInitorConstants.INIT_DATA_TXT_FILE);
             storageInitor.initStorageWithCountriesAndCities(fileWithInitData.getAbsolutePath(), StorageInitor.DataSourceType.TXT_FILE);
-        } catch (AutoServiceCheckedException e) {
+        } catch (TravelAgencyCheckedException e) {
             System.out.println("ERROR while init storage: " + e.getMessage());
             throw e;
         } catch (Exception e) {

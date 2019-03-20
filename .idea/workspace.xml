@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8559fe7b-8b5e-4e31-b515-167b2f207361" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/exception/TravelAgencyCheckedException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/exception/TravelAgencyUncheckedException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/utils/FileUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitorConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/DataSourceIoTxtFileFromResourcesReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/DataSourceReader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/InitDataExceptionMeta.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/checked/InvalidCityDiscriminatorException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/memory/Memory.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/Storage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/memory/SequenceGenerator.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/SequenceGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,11 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="473">
+              <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -56,7 +41,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataSourceIoTxtFileFromResourcesReader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataSourceIoTxtFileFromResourcesReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/DataSourceIoTxtFileFromResourcesReader.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="462">
@@ -150,7 +135,6 @@
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/user/service/implementation/UserDefaultService.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/utils/FileUtils.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitor.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitorConstants.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/DataSourceReader.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/InitDataExceptionMeta.java" />
@@ -159,6 +143,7 @@
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/exception/TravelAgencyCheckedException.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/business/exception/TravelAgencyUncheckedException.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/checked/InvalidCityDiscriminatorException.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" />
       </list>
     </option>
   </component>
@@ -880,7 +865,7 @@
       <workItem from="1552132777304" duration="7828000" />
       <workItem from="1552239744801" duration="31422000" />
       <workItem from="1552406692727" duration="1245000" />
-      <workItem from="1552999940454" duration="15048000" />
+      <workItem from="1552999940454" duration="15144000" />
     </task>
     <task id="LOCAL-00001" summary="added domains and searches for all entities, added common repository and service interfaces for city and country">
       <created>1551402469235</created>
@@ -1064,11 +1049,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553016412925</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="added initor in storage and exception in business">
+      <created>1553040241909</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1553040241909</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192703000" />
+    <option name="totallyTimeSpent" value="192799000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1160,7 +1152,8 @@
     <MESSAGE value="added city generics" />
     <MESSAGE value="added order generics" />
     <MESSAGE value="added user generics" />
-    <option name="LAST_COMMIT_MESSAGE" value="added user generics" />
+    <MESSAGE value="added initor in storage and exception in business" />
+    <option name="LAST_COMMIT_MESSAGE" value="added initor in storage and exception in business" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1521,14 +1514,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitorConstants.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1612,6 +1597,14 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="49" column="45" lean-forward="false" selection-start-line="49" selection-start-column="45" selection-end-line="49" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
