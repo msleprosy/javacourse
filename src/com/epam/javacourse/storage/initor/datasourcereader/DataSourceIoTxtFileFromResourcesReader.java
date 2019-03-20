@@ -95,16 +95,14 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
             String discriminatorAsStr = attrs[++attrIndex].trim();
             City city = createCityByDiscriminator(discriminatorAsStr);
             city.setName(attrs[++attrIndex].trim());
-            city.setDescription(attrs[++attrIndex].trim());
-            city.setProductionYearStart(Integer.parseInt(attrs[++attrIndex].trim()));
-            int productionYearEnd = Integer.parseInt(attrs[++attrIndex].trim());
-            city.setProductionYearEnd(productionYearEnd == -1 ? null : productionYearEnd);
+            city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
+            city.setIsCapital(Boolean.parseBoolean(attrs[++attrIndex].trim()));
 
-            if (PassengerModel.class.equals(city.getClass())) {
+           /* if (PassengerModel.class.equals(city.getClass())) {
                 appendPassengerAttributes((PassengerModel) city, attrs, attrIndex);
             } else if (TruckModel.class.equals(city.getClass())) {
                 appendTruckAttributes((TruckModel) city, attrs, attrIndex);
-            }
+            }*/
 
             country.getCities().add(city);
         }
