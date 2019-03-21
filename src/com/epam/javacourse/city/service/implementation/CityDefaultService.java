@@ -59,4 +59,9 @@ public class CityDefaultService implements CityService {
     public List<City> search(CitySearchCondition searchCondition) {
         return cityRepository.search(searchCondition);
     }
+
+    @Override
+    public List<City> findAll() {
+        return cityRepository.findAll();
+    }
 }

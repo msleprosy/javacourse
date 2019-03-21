@@ -34,16 +34,6 @@ public class CityMemoryCollectionRepository implements CityRepository {
         }
     }
 
-   /* @Override
-    public City findByName(String cityName) {
-        for (City city : cities) {
-            if (cityName.equals(city.getName())) {
-                return city;
-            }
-        }
-        return null;
-    }*/
-
     @Override
     public List<City> search(CitySearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
@@ -102,13 +92,8 @@ public class CityMemoryCollectionRepository implements CityRepository {
         return null;
     }
 
-/*    private void deleteCityByName(String nameForDeleting) {
-        Iterator<City> iter = cities.iterator();
-        while (iter.hasNext()) {
-            String cityName = iter.next().getName();
-            if (cityName.equals(nameForDeleting)) {
-                iter.remove();
-            }
-        }
-    }*/
+    @Override
+    public List<City> findAll() {
+        return cities;
+    }
 }

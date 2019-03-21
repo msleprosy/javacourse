@@ -73,6 +73,11 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
+    public List<Country> findAll() {
+        return countries;
+    }
+
+    @Override
     public Country findById(Long id) {
             return findCountryById(id);
     }

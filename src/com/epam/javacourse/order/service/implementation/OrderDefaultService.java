@@ -6,6 +6,7 @@ import com.epam.javacourse.order.search.OrderSearchCondition;
 import com.epam.javacourse.order.service.OrderService;
 import com.epam.javacourse.user.service.UserService;
 
+import java.util.Collections;
 import java.util.List;
 
 public class OrderDefaultService implements OrderService {
@@ -64,5 +65,19 @@ public class OrderDefaultService implements OrderService {
 
     public void printAll() {
         orderRepository.printAll();
+    }
+
+    @Override
+    public List<Order> findAll() {
+        return orderRepository.findAll();
+    }
+
+    @Override
+    public List<Order> getOrdersByUser(Long userId) {
+        if (userId != null) {
+            return orderRepository.findByUserId(userId);
+        }
+
+        return Collections.emptyList();
     }
 }

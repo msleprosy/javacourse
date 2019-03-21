@@ -68,4 +68,9 @@ public class CountryDefaultService implements CountryService {
     public List<Country> search(CountrySearchCondition searchCondition) {
         return countryRepository.search(searchCondition);
     }
+
+    @Override
+    public List<Country> findAll() {
+        return countryRepository.findAll();
+    }
 }

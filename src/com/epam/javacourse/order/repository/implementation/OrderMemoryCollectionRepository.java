@@ -58,6 +58,11 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     }
 
     @Override
+    public List<Order> findAll() {
+        return orders;
+    }
+
+    @Override
     public Order findById(Long id) {
         return findOrderById(id);
     }
@@ -90,5 +95,17 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
             }
         }
         return result;
+    }
+    @Override
+    public List<Order> findByUserId(long userId) {
+        List<Order> foundOrders = new ArrayList<>();
+
+        for (Order order : orders) {
+            if (order.getUser().getId().equals(userId)) {
+                foundOrders.add(order);
+            }
+        }
+
+        return foundOrders;
     }
 }

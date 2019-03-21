@@ -86,27 +86,18 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
     private Country getCountry(String countryCsv, String[] citiesCsv) throws InvalidCityDiscriminatorException {
         String[] attrs = countryCsv.split("\\|");
         int attrIndex = -1;
-
-        Country country = new Country(attrs[++attrIndex].trim(), attrs[++attrIndex].trim());
+        String discriminatorAsStr = attrs[++attrIndex].trim();
+        Country country = createCountryByDiscriminator(discriminatorAsStr);
         country.setCities(new ArrayList<>());
 
         for (int i = 0; i < citiesCsv.length; i++) {
             String csvCity = citiesCsv[i];
             attrIndex = -1;
             attrs = csvCity.split("\\|");
-
-            String discriminatorAsStr = attrs[++attrIndex].trim();
-            City city = createCityByDiscriminator(discriminatorAsStr);
+            City city = new City();
             city.setName(attrs[++attrIndex].trim());
             city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
             city.setIsCapital(Boolean.parseBoolean(attrs[++attrIndex].trim()));
-
-           /* if (PassengerModel.class.equals(city.getClass())) {
-                appendPassengerAttributes((PassengerModel) city, attrs, attrIndex);
-            } else if (TruckModel.class.equals(city.getClass())) {
-                appendTruckAttributes((TruckModel) city, attrs, attrIndex);
-            }*/
-
             country.getCities().add(city);
         }
 
@@ -136,7 +127,7 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
 
     private void appendHotAttributes(CountryWithHotClimate country, String[] attrs, int attrIndex) {
         country.setAverageTemperature(attrs[++attrIndex].trim());
-        country.setHottestMonth(attrs[++attrIndex].trim()););
+        country.setHottestMonth(attrs[++attrIndex].trim());
     }
 }
 

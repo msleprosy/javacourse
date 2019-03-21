@@ -74,4 +74,9 @@ public class UserDefaultService implements UserService {
     public List<User> search(UserSearchCondition searchCondition) {
         return userRepository.search(searchCondition);
     }
+
+    @Override
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
 }

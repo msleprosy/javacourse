@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface OrderRepository extends BaseRepository<Order, Long> {
     List<Order> search(OrderSearchCondition searchCondition);
+
+    List<Order> findByUserId(long userId);
 }

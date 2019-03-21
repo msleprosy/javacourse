@@ -62,6 +62,11 @@ public class UserMemoryCollectionRepository implements UserRepository {
         }
     }
 
+    @Override
+    public List<User> findAll() {
+        return users;
+    }
+
 
     private List<User> doSearch(UserSearchCondition searchCondition) {
         boolean searchByName = isNotBlank(searchCondition.getName());
@@ -91,15 +96,5 @@ public class UserMemoryCollectionRepository implements UserRepository {
         }
         return null;
     }
-
-/*    private void deleteUserByName(String nameForDeleting) {
-        Iterator<User> iter = users.iterator();
-        while (iter.hasNext()) {
-            String userName = iter.next().getName();
-            if (userName.equals(nameForDeleting)) {
-                iter.remove();
-            }
-        }
-    }*/
 }
 

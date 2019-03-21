@@ -16,6 +16,7 @@ import com.epam.javacourse.country.search.CountrySearchCondition;
 import com.epam.javacourse.country.service.CountryService;
 import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.service.OrderService;
+import com.epam.javacourse.reporting.ReportProvider;
 import com.epam.javacourse.storage.initor.StorageInitor;
 import com.epam.javacourse.storage.initor.StorageInitorConstants;
 import com.epam.javacourse.user.domain.User;
@@ -28,6 +29,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.epam.javacourse.common.solutions.utils.RandomUtils.getRandomInt;
 
 public class Application {
     static {
@@ -324,7 +327,7 @@ public class Application {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Application application = new Application();
         application.fillStorage();
 
