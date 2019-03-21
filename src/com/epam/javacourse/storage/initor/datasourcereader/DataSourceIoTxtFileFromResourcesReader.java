@@ -82,13 +82,12 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
         String[] cityCsv = countryWithCities.toArray(new String[0]);
         return getCountry(countryAsStr, cityCsv);
     }
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//---------------------------------------------------------------------------------------------------------------
     private Country getCountry(String countryCsv, String[] citiesCsv) throws InvalidCityDiscriminatorException {
         String[] attrs = countryCsv.split("\\|");
         int attrIndex = -1;
         String discriminatorAsStr = attrs[++attrIndex].trim();
         Country country = createCountryByDiscriminator(discriminatorAsStr);
-        country.setCities(new ArrayList<>());
 
         for (int i = 0; i < citiesCsv.length; i++) {
             String csvCity = citiesCsv[i];
@@ -98,12 +97,26 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
             city.setName(attrs[++attrIndex].trim());
             city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
             city.setIsCapital(Boolean.parseBoolean(attrs[++attrIndex].trim()));
+
             country.getCities().add(city);
         }
 
+        for (int i = 0; i < attrs.length; i++) {
+            //Country country = createCountryByDiscriminator(discriminatorAsStr);
+            country.setCities(new ArrayList<>());
+            country.setName(attrs[++attrIndex].trim());
+            country.setLanguage(attrs[++attrIndex].trim());
+            if (CountryWithColdClimate.class.equals(country.getClass())) {
+                appendColdClimateAttributes((CountryWithColdClimate) country, attrs, attrIndex);
+            } else if (CountryWithHotClimate.class.equals(country.getClass())) {
+                appendHotClimateAttributes((CountryWithHotClimate) country, attrs, attrIndex);
+            }
+        }
+
+
         return country;
     }
-//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//---------------------------------------------------------------------------------------------------------------
 
     private Country createCountryByDiscriminator(String discriminatorAsStr) throws InvalidCityDiscriminatorException {
         if (CountryDiscriminator.isDiscriminatorNotExists(discriminatorAsStr)) {
@@ -125,7 +138,7 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
         country.setPhoneCode(attrs[++attrIndex].trim());
     }
 
-    private void appendHotAttributes(CountryWithHotClimate country, String[] attrs, int attrIndex) {
+    private void appendHotClimateAttributes(CountryWithHotClimate country, String[] attrs, int attrIndex) {
         country.setAverageTemperature(attrs[++attrIndex].trim());
         country.setHottestMonth(attrs[++attrIndex].trim());
     }
