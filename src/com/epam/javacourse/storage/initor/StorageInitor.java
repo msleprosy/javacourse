@@ -3,7 +3,7 @@ package com.epam.javacourse.storage.initor;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.service.CountryService;
 import com.epam.javacourse.storage.initor.datasourcereader.DataSourceIoTxtFileFromResourcesReader;
-import com.epam.javacourse.storage.initor.datasourcereader.DataSourceReader;
+import com.epam.javacourse.storage.initor.datasourcereader.FileParser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,12 +35,12 @@ public class StorageInitor {
     private List<Country> getCountriesFromStorage(String filePath, DataSourceType dataSourceType) throws Exception {
 
         List<Country> countries = new ArrayList<>();
-        DataSourceReader<List<Country>> dataSourceReader = null;
+        FileParser<List<Country>> fileParser = null;
 
         switch (dataSourceType) {
 
             case TXT_FILE: {
-                dataSourceReader = new DataSourceIoTxtFileFromResourcesReader();
+                fileParser = new DataSourceIoTxtFileFromResourcesReader();
                 break;
             }
             case XML_FILE: {
@@ -51,8 +51,8 @@ public class StorageInitor {
             }
         }
 
-        if (dataSourceReader != null) {
-            countries = dataSourceReader.getDataFromFile(filePath);
+        if (fileParser != null) {
+            countries = fileParser.parseFile(filePath);
         }
 
         return countries;

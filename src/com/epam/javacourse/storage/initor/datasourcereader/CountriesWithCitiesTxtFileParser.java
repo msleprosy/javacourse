@@ -18,12 +18,12 @@ import static com.epam.javacourse.storage.initor.exception.InitDataExceptionMeta
 /**
  * Created by veronika on 20.03.2019.
  */
-public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<List<Country>> {
+public class CountriesWithCitiesTxtFileParser implements FileParser<List<Country>> {
 
     private static final String COUNTRY_PLACEHOLDER = "Country:";
 
     @Override
-    public List<Country> getDataFromFile(String file) throws Exception {
+    public List<Country> parseFile(String file) throws Exception {
         List<String> fileAsList = readFileToList(file);
 
         List<Country> result = new ArrayList<>();
@@ -86,20 +86,9 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
     private Country getCountry(String countryCsv, String[] citiesCsv) throws InvalidCityDiscriminatorException {
         String[] attrs = countryCsv.split("\\|");
         int attrIndex = -1;
-        String discriminatorAsStr = attrs[++attrIndex].trim();
+
+   /*     String discriminatorAsStr = attrs[++attrIndex].trim();
         Country country = createCountryByDiscriminator(discriminatorAsStr);
-
-        for (int i = 0; i < citiesCsv.length; i++) {
-            String csvCity = citiesCsv[i];
-            attrIndex = -1;
-            attrs = csvCity.split("\\|");
-            City city = new City();
-            city.setName(attrs[++attrIndex].trim());
-            city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
-            city.setIsCapital(Boolean.parseBoolean(attrs[++attrIndex].trim()));
-
-            country.getCities().add(city);
-        }
 
         for (int i = 0; i < attrs.length; i++) {
             //Country country = createCountryByDiscriminator(discriminatorAsStr);
@@ -113,9 +102,41 @@ public class DataSourceIoTxtFileFromResourcesReader implements DataSourceReader<
             }
         }
 
+        for (int i = 0; i < citiesCsv.length; i++) {
+            String csvCity = citiesCsv[i];
+            attrIndex = -1;
+            attrs = csvCity.split("\\|");
+            City city = new City();
+            city.setName(attrs[++attrIndex].trim());
+            city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
+            city.setIsCapital(Boolean.parseBoolean(attrs[++attrIndex].trim()));
+
+            country.getCities().add(city);
+        }
 
         return country;
+    }*/
+        String discriminatorAsStr = attrs[++attrIndex].trim();
+        Country country = createCountryByDiscriminator(discriminatorAsStr);
+        country.setCities(new ArrayList<>());
+        for (int i = 0; i < citiesCsv.length; i++) {
+            String csvCity = citiesCsv[i];
+            attrIndex = -1;
+            attrs = csvCity.split("\\|");
+            City city = new City();
+            city.setName(attrs[++attrIndex].trim());
+            city.setPopulation(Integer.parseInt(attrs[++attrIndex].trim()));
+            city.setIsCapital(Boolean.parseBoolean(attrs[++attrIndex].trim()));
+            if (CountryWithColdClimate.class.equals(country.getClass())) {
+                appendColdClimateAttributes((CountryWithColdClimate) country, attrs, attrIndex);
+            } else if (CountryWithHotClimate.class.equals(country.getClass())) {
+                appendHotClimateAttributes((CountryWithHotClimate) country, attrs, attrIndex);
+            }
+            country.getCities().add(city);
+        }
+        return country;
     }
+
 //---------------------------------------------------------------------------------------------------------------
 
     private Country createCountryByDiscriminator(String discriminatorAsStr) throws InvalidCityDiscriminatorException {
