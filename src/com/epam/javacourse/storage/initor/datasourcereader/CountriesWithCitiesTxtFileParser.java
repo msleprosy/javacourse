@@ -1,3 +1,4 @@
+/*
 package com.epam.javacourse.storage.initor.datasourcereader;
 
 import com.epam.javacourse.country.domain.Country;
@@ -14,9 +15,11 @@ import java.util.List;
 
 import static com.epam.javacourse.storage.initor.exception.InitDataExceptionMeta.PARSE_COUNTRY_DISCRIMINATOR_ERROR;
 
+*/
 /**
  * Created by veronika on 20.03.2019.
- */
+ *//*
+
 public class CountriesWithCitiesTxtFileParser implements FileParser<List<Country>> {
 
     private static final String COUNTRY_PLACEHOLDER = "Country:";
@@ -110,7 +113,8 @@ public class CountriesWithCitiesTxtFileParser implements FileParser<List<Country
 
         return country;
     }
-        /*String discriminatorAsStr = attrs[++attrIndex].trim();
+        */
+/*String discriminatorAsStr = attrs[++attrIndex].trim();
         Country country = createCountryByDiscriminator(discriminatorAsStr);
         country.setCities(new ArrayList<>());
         for (int i = 0; i < citiesCsv.length; i++) {
@@ -130,7 +134,8 @@ public class CountriesWithCitiesTxtFileParser implements FileParser<List<Country
         }
         return country;
     }
-*/
+*//*
+
 //---------------------------------------------------------------------------------------------------------------
 
     private Country createCountryByDiscriminator(String discriminatorAsStr) throws InvalidCountryDiscriminatorException {
@@ -159,3 +164,4 @@ public class CountriesWithCitiesTxtFileParser implements FileParser<List<Country
     }
 }
 
+*/

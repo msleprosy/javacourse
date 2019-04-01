@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8559fe7b-8b5e-4e31-b515-167b2f207361" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/XmlParser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/checked/InvalidCityDiscriminatorException.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/checked/InvalidCountryDiscriminatorException.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitor.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesTxtFileParser.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesTxtFileParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlDomParser.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlDomParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java" afterPath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,28 +20,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="CountriesWithCitiesXmlDomParser.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlDomParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="50" column="34" lean-forward="false" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="City.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/domain/City.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CountryWithHotClimate.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryWithHotClimate.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -53,6 +28,18 @@
               <folding>
                 <element signature="e#546#547#0" expanded="true" />
                 <element signature="e#606#607#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountriesWithCitiesXmlStaxParser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3423">
+              <caret line="182" column="76" lean-forward="false" selection-start-line="182" selection-start-column="76" selection-end-line="182" selection-end-column="76" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,7 +59,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/Country.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="139">
-              <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+              <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -81,8 +68,8 @@
       <file leaf-file-name="CountryDiscriminator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryDiscriminator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="32" />
+            <state relative-caret-position="132">
+              <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -159,14 +146,14 @@
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/XmlDomUtils.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/dom/XmlDomUtils.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/sax/XmlSaxUtils.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/sax/CountriesWithCitiesSaxHandler.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/sax/CountriesWithCitiesXmlSaxParser.java" />
         <option value="$PROJECT_DIR$/src/k.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitor.java" />
-        <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesTxtFileParser.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlDomParser.java" />
         <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/XmlParser.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesTxtFileParser.java" />
+        <option value="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java" />
       </list>
     </option>
   </component>
@@ -779,7 +766,7 @@
       <workItem from="1553605878295" duration="19000" />
       <workItem from="1553606174722" duration="210000" />
       <workItem from="1553639503549" duration="1721000" />
-      <workItem from="1554110934500" duration="1326000" />
+      <workItem from="1554110934500" duration="2091000" />
     </task>
     <task id="LOCAL-00001" summary="added domains and searches for all entities, added common repository and service interfaces for city and country">
       <created>1551402469235</created>
@@ -1054,11 +1041,18 @@
       <option name="project" value="LOCAL" />
       <updated>1553465690326</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="dom parser fixed">
+      <created>1554112327236</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1554112327236</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241647000" />
+    <option name="totallyTimeSpent" value="242412000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1155,7 +1149,8 @@
     <MESSAGE value="added reporting" />
     <MESSAGE value="added classes for xml parsing" />
     <MESSAGE value="added xml in Solutions" />
-    <option name="LAST_COMMIT_MESSAGE" value="added xml in Solutions" />
+    <MESSAGE value="dom parser fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="dom parser fixed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1377,13 +1372,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/sax/CountriesWithCitiesSaxHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
@@ -1435,16 +1423,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesTxtFileParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="94" column="19" lean-forward="true" selection-start-line="94" selection-start-column="19" selection-end-line="94" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1056">
@@ -1453,27 +1431,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/Country.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/dom/XmlDomUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="11" column="49" lean-forward="false" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+        <state relative-caret-position="429">
+          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryDiscriminator.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/XmlParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="32" />
+          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryWithColdClimate.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesTxtFileParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+        <state relative-caret-position="1672">
+          <caret line="76" column="35" lean-forward="true" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#6861#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/domain/City.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlDomParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="50" column="34" lean-forward="false" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1488,34 +1486,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/dom/XmlDomUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/Country.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="38" column="25" lean-forward="false" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        <state relative-caret-position="139">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/city/domain/City.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryDiscriminator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="132">
+          <caret line="7" column="3" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/XmlParser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryWithColdClimate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="1" lean-forward="false" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="1" />
+        <state relative-caret-position="330">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlDomParser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="50" column="34" lean-forward="false" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        <state relative-caret-position="3423">
+          <caret line="182" column="76" lean-forward="false" selection-start-line="182" selection-start-column="76" selection-end-line="182" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
