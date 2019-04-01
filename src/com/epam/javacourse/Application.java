@@ -17,7 +17,7 @@ import com.epam.javacourse.country.service.CountryService;
 import com.epam.javacourse.order.domain.Order;
 import com.epam.javacourse.order.service.OrderService;
 import com.epam.javacourse.reporting.ReportProvider;
-import com.epam.javacourse.storage.initor.StorageInitor;
+import com.epam.javacourse.storage.initor.StorageInitializer;
 import com.epam.javacourse.storage.initor.StorageInitorConstants;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.search.UserOrderByField;
@@ -44,12 +44,12 @@ public class Application {
 
     public void fillStorage() throws Exception {
         addUsers();
-        StorageInitor storageInitor = new StorageInitor(countryService);
+        StorageInitializer storageInitor = new StorageInitializer(countryService);
         File fileWithInitData = null;
         try {
             fileWithInitData = FileUtils
                     .createFileFromResource("init-data", ".txt", StorageInitorConstants.INIT_DATA_TXT_FILE);
-            storageInitor.initStorageWithCountriesAndCities(fileWithInitData.getAbsolutePath(), StorageInitor.DataSourceType.TXT_FILE);
+            storageInitor.initStorageWithCountriesAndCities(fileWithInitData.getAbsolutePath(), StorageInitializer.DataSourceType.TXT_FILE);
         } catch (TravelAgencyCheckedException e) {
             System.out.println("ERROR while init storage: " + e.getMessage());
             throw e;
