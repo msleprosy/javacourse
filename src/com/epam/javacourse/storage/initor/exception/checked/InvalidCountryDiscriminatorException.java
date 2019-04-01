@@ -5,9 +5,9 @@ import com.epam.javacourse.common.business.exception.TravelAgencyCheckedExceptio
 /**
  * Created by veronika on 20.03.2019.
  */
-public class InvalidCityDiscriminatorException extends TravelAgencyCheckedException {
+public class InvalidCountryDiscriminatorException extends TravelAgencyCheckedException {
 
-    public InvalidCityDiscriminatorException(int code, String message) {
+    public InvalidCountryDiscriminatorException(int code, String message) {
         super(code, message);
     }
 }
