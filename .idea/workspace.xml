@@ -2,101 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8559fe7b-8b5e-4e31-b515-167b2f207361" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_198.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_collections4_4_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_25.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/epam/javacourse/country/exception/CountryExceptionMeta.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/epam/javacourse/country/exception/DeleteCountryException.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/Application.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/domain/City.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/CityRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityComparatorComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityMemoryCollectionRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/repository/implementation/CityOrderingComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/search/CityOrderByField.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/search/CitySearchCondition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/service/CityService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/city/service/implementation/CityDefaultService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/ApplicationConfigurations.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/StorageType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/servicefactory/MemoryCollectionServiceFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/servicefactory/ServiceFactory.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/application/servicefactory/ServiceSupplier.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/domain/BaseDomain.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/exception/TravelAgencyCheckedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/exception/TravelAgencyUncheckedException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/repository/memory/CommonComparatorHolder.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/search/BaseSearchCondition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/search/OrderDirection.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/search/OrderType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/business/search/Paginator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/dataclasses/Pair.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/repository/BaseRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/service/BaseService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/utils/CollectionUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/utils/FileUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/utils/RandomUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/utils/StringUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/dom/XmlDomUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/sax/XmlSaxUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/stax/XmlStaxUtils.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/common/solutions/xml/stax/parse/CustomStaxReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/domain/Country.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryDiscriminator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryWithColdClimate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/domain/CountryWithHotClimate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/CountryRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryComparatorComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryMemoryCollectionRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/repository/implementation/CountryOrderingComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/search/CountryOrderByField.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/search/CountrySearchCondition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/service/CountryService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/country/service/implementation/CountryDefaultService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/domain/Order.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/OrderRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderComparatorComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderMemoryCollectionRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/repository/implementation/OrderOrderingComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/search/OrderByField.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/search/OrderSearchCondition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/service/OrderService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/order/service/implementation/OrderDefaultService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/reporting/ReportComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/reporting/ReportProvider.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/reporting/UserOrdersIoTextFileReport.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/SequenceGenerator.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/Storage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitializer.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/StorageInitorConstants.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesTxtFileParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlDomParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/CountriesWithCitiesXmlStaxParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/FileParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/StaxReader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/XmlParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/sax/CountriesWithCitiesXmlSaxHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/datasourcereader/sax/CountriesWithCitiesXmlSaxParser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/InitDataExceptionMeta.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/storage/initor/exception/checked/InvalidCountryDiscriminatorException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/ClientType.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/SimpleUser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/User.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/domain/VeryImportantUser.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/UserRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserComparatorComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserMemoryCollectionRepository.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/repository/implementation/UserOrderingComponent.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/search/UserOrderByField.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/search/UserSearchCondition.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/service/UserService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/epam/javacourse/user/service/implementation/UserDefaultService.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/travel_agency.iml" afterPath="$PROJECT_DIR$/travel_agency.iml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -864,7 +770,7 @@
       <workItem from="1553639503549" duration="1721000" />
       <workItem from="1554110934500" duration="4141000" />
       <workItem from="1554223048198" duration="41000" />
-      <workItem from="1555237805354" duration="12348000" />
+      <workItem from="1555237805354" duration="12395000" />
     </task>
     <task id="LOCAL-00001" summary="added domains and searches for all entities, added common repository and service interfaces for city and country">
       <created>1551402469235</created>
@@ -1167,11 +1073,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555245520803</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="updated repos/services of entities (concurrency initialization issue15)">
+      <created>1555250982918</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1555250982918</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256851000" />
+    <option name="totallyTimeSpent" value="256898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
