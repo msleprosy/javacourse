@@ -7,5 +7,5 @@ import com.epam.javacourse.user.search.UserSearchCondition;
 import java.util.List;
 
 public interface UserRepository extends BaseRepository<User, Long> {
-    List<User> search(UserSearchCondition searchCondition);
+    List<? extends User> search(UserSearchCondition searchCondition);
 }

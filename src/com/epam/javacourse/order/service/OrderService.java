@@ -8,10 +8,13 @@ import com.epam.javacourse.order.search.OrderSearchCondition;
 import java.util.List;
 
 public interface OrderService extends BaseService<Order, Long> {
+
     void evaluateOrderPriceByUserType(double price);
 
     List<Order> search(OrderSearchCondition searchCondition);
 
     List<Order> getOrdersByUser(Long userId);
+
+    void deleteByUserId(Long userId);
 
 }

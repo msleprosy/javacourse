@@ -9,9 +9,6 @@ import com.epam.javacourse.storage.initor.datasourcereader.sax.CountriesWithCiti
 
 import java.util.List;
 
-//import com.epam.javacourse.storage.initor.datasourcereader.CountriesWithCitiesTxtFileParser;
-
-
 
 public class StorageInitializer {
     private CountryService countryService;
@@ -21,7 +18,7 @@ public class StorageInitializer {
     }
 
     public enum DataSourceType {
-        TXT_FILE, XML_FILE
+        XML_FILE
     }
 
     public void initStorageWithCountriesAndCities(String filePath, DataSourceType dataSourceType) throws Exception {

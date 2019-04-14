@@ -5,6 +5,7 @@ import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.city.service.CityService;
 
+import java.util.Collection;
 import java.util.List;
 
 public class CityDefaultService implements CityService {
@@ -19,6 +20,13 @@ public class CityDefaultService implements CityService {
     public void add(City entity) {
         if (entity != null) {
             cityRepository.add(entity);
+        }
+    }
+
+    @Override
+    public void add(Collection<City> cities) {
+        if (cities != null && !cities.isEmpty()) {
+            cityRepository.add(cities);
         }
     }
 
@@ -63,5 +71,10 @@ public class CityDefaultService implements CityService {
     @Override
     public List<City> findAll() {
         return cityRepository.findAll();
+    }
+
+    @Override
+    public int countAll() {
+        return cityRepository.countAll();
     }
 }

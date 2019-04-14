@@ -6,6 +6,7 @@ import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.storage.SequenceGenerator;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,6 +20,13 @@ public class CityMemoryCollectionRepository implements CityRepository {
     public void add(City entity) {
         entity.setId(SequenceGenerator.getNextValue());
         cities.add(entity);
+    }
+
+    @Override
+    public void add(Collection<City> cities) {
+        for (City city : cities) {
+            add(city);
+        }
     }
 
     @Override
@@ -52,7 +60,7 @@ public class CityMemoryCollectionRepository implements CityRepository {
 
     @Override
     public City findById(Long id) {
-            return findCityById(id);
+        return findCityById(id);
     }
 
     @Override
@@ -95,5 +103,10 @@ public class CityMemoryCollectionRepository implements CityRepository {
     @Override
     public List<City> findAll() {
         return cities;
+    }
+
+    @Override
+    public int countAll() {
+        return cities.size();
     }
 }

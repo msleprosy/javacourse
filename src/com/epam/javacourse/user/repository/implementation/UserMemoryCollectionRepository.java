@@ -6,6 +6,7 @@ import com.epam.javacourse.user.repository.UserRepository;
 import com.epam.javacourse.user.search.UserSearchCondition;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,6 +20,13 @@ public class UserMemoryCollectionRepository implements UserRepository {
     public void add(User entity) {
         entity.setId(SequenceGenerator.getNextValue());
         users.add(entity);
+    }
+
+    @Override
+    public void add(Collection<User> users) {
+        for (User user : users) {
+            add(user);
+        }
     }
 
     @Override
@@ -65,6 +73,11 @@ public class UserMemoryCollectionRepository implements UserRepository {
     @Override
     public List<User> findAll() {
         return users;
+    }
+
+    @Override
+    public int countAll() {
+        return users.size();
     }
 
 

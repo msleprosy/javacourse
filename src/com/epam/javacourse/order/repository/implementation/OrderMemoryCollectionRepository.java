@@ -6,6 +6,7 @@ import com.epam.javacourse.order.repository.OrderRepository;
 import com.epam.javacourse.order.search.OrderSearchCondition;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -19,6 +20,13 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     public void add(Order entity) {
         entity.setId(SequenceGenerator.getNextValue());
         orders.add(entity);
+    }
+
+    @Override
+    public void add(Collection<Order> orders) {
+        for (Order order : orders) {
+            add(order);
+        }
     }
 
     @Override
@@ -51,6 +59,33 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     }
 
     @Override
+    public int countByCity(long cityId) {
+        int count = 0;
+        for (Order order : orders) {
+            if (cityId == order.getCity().getId()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    @Override
+    public int countByCountry(long countryId) {
+        int count = 0;
+        for (Order order : orders) {
+            if (countryId == order.getCountry().getId()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    @Override
+    public void deleteByUserId(long userId) {
+
+    }
+
+    @Override
     public void printAll() {
         for (Order order : orders) {
             System.out.println(order);
@@ -60,6 +95,11 @@ public class OrderMemoryCollectionRepository implements OrderRepository {
     @Override
     public List<Order> findAll() {
         return orders;
+    }
+
+    @Override
+    public int countAll() {
+        return orders.size();
     }
 
     @Override

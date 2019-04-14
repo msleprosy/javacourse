@@ -48,8 +48,8 @@ public class Application {
         File fileWithInitData = null;
         try {
             fileWithInitData = FileUtils
-                    .createFileFromResource("init-data", ".txt", StorageInitorConstants.INIT_DATA_TXT_FILE);
-            storageInitor.initStorageWithCountriesAndCities(fileWithInitData.getAbsolutePath(), StorageInitializer.DataSourceType.TXT_FILE);
+                    .createFileFromResource("init-data", ".xml", StorageInitorConstants.INIT_DATA_XML_FILE);
+            storageInitor.initStorageWithCountriesAndCities(fileWithInitData.getAbsolutePath(), StorageInitializer.DataSourceType.XML_FILE);
         } catch (TravelAgencyCheckedException e) {
             System.out.println("ERROR while init storage: " + e.getMessage());
             throw e;

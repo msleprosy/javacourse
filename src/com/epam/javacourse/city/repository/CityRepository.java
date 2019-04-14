@@ -7,5 +7,5 @@ import com.epam.javacourse.common.solutions.repository.BaseRepository;
 import java.util.List;
 
 public interface CityRepository extends BaseRepository<City, Long> {
-    List<City> search(CitySearchCondition searchCondition);
+    List<? extends City> search(CitySearchCondition searchCondition);
 }

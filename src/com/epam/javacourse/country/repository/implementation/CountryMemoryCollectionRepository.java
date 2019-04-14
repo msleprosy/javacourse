@@ -1,12 +1,14 @@
 package com.epam.javacourse.country.repository.implementation;
 
+import com.epam.javacourse.common.business.search.Paginator;
+import com.epam.javacourse.common.solutions.utils.CollectionUtils;
 import com.epam.javacourse.country.domain.Country;
 import com.epam.javacourse.country.repository.CountryRepository;
 import com.epam.javacourse.country.search.CountrySearchCondition;
 import com.epam.javacourse.storage.SequenceGenerator;
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Collection;
 import java.util.List;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
@@ -21,8 +23,23 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         countries.add(entity);
     }
 
+
+    /*
+    *     public void insert(Mark mark) {
+        if (mark != null) {
+            markRepo.insert(mark);
+
+            if (mark.getModels() != null && !mark.getModels().isEmpty()) {
+                for (Model model : mark.getModels()) {
+                    modelService.insert(model);
+                }
+            }
+        }
+    }
+    * */
+
     @Override
-    public void update(Country entity) {
+    public void update(Country country) {
 
     }
 
@@ -51,9 +68,9 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
 
     @Override
     public List<Country> search(CountrySearchCondition searchCondition) {
-        if (searchCondition.getId() != null) {
+/*        if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
-        } else {
+        } else {*/
             List<Country> result = doSearch(searchCondition);
 
             boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
@@ -61,9 +78,13 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
                 orderingComponent.applyOrdering(result, searchCondition);
             }
 
+            if (!result.isEmpty() && searchCondition.shouldPaginate()) {
+                result = getPageableData(result, searchCondition.getPaginator());
+            }
+
             return result;
         }
-    }
+
 
     @Override
     public void printAll() {
@@ -78,8 +99,20 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
     }
 
     @Override
+    public int countAll() {
+        return countries.size();
+    }
+
+    @Override
     public Country findById(Long id) {
             return findCountryById(id);
+    }
+
+    @Override
+    public void add(Collection<Country> countries) {
+        for (Country country : countries) {
+            add(country);
+        }
     }
 
     private List<Country> doSearch(CountrySearchCondition searchCondition) {
@@ -109,6 +142,10 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
             }
         }
         return null;
+    }
+
+    private List<Country> getPageableData(List<Country> countries, Paginator paginator) {
+        return CollectionUtils.getPageableData(countries, paginator.getLimit(), paginator.getOffset());
     }
 
 /*    private void deleteCountryByName(String nameForDeleting) {

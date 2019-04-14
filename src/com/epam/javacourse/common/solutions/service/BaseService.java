@@ -1,5 +1,6 @@
 package com.epam.javacourse.common.solutions.service;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -8,6 +9,8 @@ import java.util.List;
 public interface BaseService<TYPE, ID> {
 
     void add(TYPE entity);
+
+    void add(Collection<TYPE> items);
 
     void update(TYPE entity);
 
@@ -20,5 +23,7 @@ public interface BaseService<TYPE, ID> {
     void printAll();
 
     List<TYPE> findAll();
+
+    int countAll();
 
 }

@@ -6,6 +6,7 @@ import com.epam.javacourse.order.search.OrderSearchCondition;
 import com.epam.javacourse.order.service.OrderService;
 import com.epam.javacourse.user.service.UserService;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,6 +29,13 @@ public class OrderDefaultService implements OrderService {
     @Override
     public void add(Order entity) {
         orderRepository.add(entity);
+    }
+
+    @Override
+    public void add(Collection<Order> orders) {
+        if (orders != null && !orders.isEmpty()) {
+            orderRepository.add(orders);
+        }
     }
 
     @Override
@@ -73,11 +81,23 @@ public class OrderDefaultService implements OrderService {
     }
 
     @Override
+    public int countAll() {
+        return orderRepository.countAll();
+    }
+
+    @Override
     public List<Order> getOrdersByUser(Long userId) {
         if (userId != null) {
             return orderRepository.findByUserId(userId);
         }
 
         return Collections.emptyList();
+    }
+
+    @Override
+    public void deleteByUserId(Long userId) {
+        if (userId != null) {
+            orderRepository.deleteByUserId(userId);
+        }
     }
 }

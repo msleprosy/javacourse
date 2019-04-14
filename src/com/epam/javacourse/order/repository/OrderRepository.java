@@ -9,5 +9,11 @@ import java.util.List;
 public interface OrderRepository extends BaseRepository<Order, Long> {
     List<Order> search(OrderSearchCondition searchCondition);
 
+    int countByCity(long cityId);
+
+    int countByCountry(long countryId);
+
+    void deleteByUserId(long userId);
+
     List<Order> findByUserId(long userId);
 }
