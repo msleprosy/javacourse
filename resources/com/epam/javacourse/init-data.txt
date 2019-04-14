@@ -1,0 +1,15 @@
+Country: Japan| japanese | july | 25
+HOT_CLIMATE|Osaka | 10000 | 0 
+HOT_CLIMATE|Tokio | 20000 | 1 
+
+Country: Ireland | irish | 2 | 0
+COLD_CLIMATE|Dublin | 30000 | 1
+
+Country: England | english | 3 | 0
+COLD_CLIMATE|London | 40000 | 1
+
+Country: Russia | russian | 4| 1
+COLD_CLIMATE | Saint-Petersburg   | 50000 | 0
+COLD_CLIMATE | Moscow | 60000     | 1
+
+
