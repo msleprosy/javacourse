@@ -1,52 +1,68 @@
 package com.epam.javacourse.user.repository.implementation;
 
+import com.epam.javacourse.common.business.search.Paginator;
+import com.epam.javacourse.common.solutions.utils.CollectionUtils;
 import com.epam.javacourse.storage.SequenceGenerator;
 import com.epam.javacourse.user.domain.User;
 import com.epam.javacourse.user.repository.UserRepository;
 import com.epam.javacourse.user.search.UserSearchCondition;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
-import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
 import static com.epam.javacourse.storage.Storage.users;
 
 public class UserMemoryCollectionRepository implements UserRepository {
     private UserOrderingComponent orderingComponent = new UserOrderingComponent();
 
     @Override
-    public void add(User entity) {
-        entity.setId(SequenceGenerator.getNextValue());
-        users.add(entity);
+    public User add(User user) {
+        user.setId(SequenceGenerator.getNextValue());
+        users.add(user);
+        return user;
     }
 
     @Override
     public void add(Collection<User> users) {
-        for (User user : users) {
-            add(user);
-        }
+        users.forEach(this::add);
     }
 
     @Override
-    public void update(User entity) {
+    public void update(User user) {
 
     }
 
-    public User findById(Long id) {
+    public Optional<User> findById(Long id) {
         return findUserById(id);
     }
 
     @Override
     public void deleteById(Long id) {
-        User found = findUserById(id);
-        if (found != null) {
-            users.remove(found);
-        }
+        findUserById(id).map(user -> users.remove(user));
     }
 
     @Override
+    public List<? extends User> search(UserSearchCondition searchCondition) {
+        List<? extends User> users = doSearch(searchCondition);
+
+        if (!users.isEmpty() && searchCondition.shouldPaginate()) {
+            users = getPageableData(users, searchCondition.getPaginator());
+        }
+
+        return users;
+    }
+
+    private List<? extends User> getPageableData(List<? extends User> users, Paginator paginator) {
+        return CollectionUtils.getPageableData(users, paginator.getLimit(), paginator.getOffset());
+    }
+
+    private List<User> doSearch(UserSearchCondition searchCondition) {
+        return users;
+    }
+
+
+/*    @Override
     public List<User> search(UserSearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
@@ -60,14 +76,12 @@ public class UserMemoryCollectionRepository implements UserRepository {
 
             return result;
         }
-    }
+    }*/
 
 
     @Override
     public void printAll() {
-        for (User user : users) {
-            System.out.println(user);
-        }
+        users.forEach(System.out::println);
     }
 
     @Override
@@ -80,7 +94,7 @@ public class UserMemoryCollectionRepository implements UserRepository {
         return users.size();
     }
 
-
+/*
     private List<User> doSearch(UserSearchCondition searchCondition) {
         boolean searchByName = isNotBlank(searchCondition.getName());
 
@@ -99,15 +113,11 @@ public class UserMemoryCollectionRepository implements UserRepository {
             }
         }
         return result;
+    }*/
+
+    private Optional<User> findUserById(long userId) {
+        return users.stream().filter(user -> Long.valueOf(userId).equals(user.getId())).findAny();
     }
 
-    private User findUserById(long userId) {
-        for (User user : users) {
-            if (Long.valueOf(userId).equals(user.getId())) {
-                return user;
-            }
-        }
-        return null;
-    }
 }
 

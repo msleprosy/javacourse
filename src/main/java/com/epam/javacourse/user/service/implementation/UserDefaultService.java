@@ -10,6 +10,7 @@ import com.epam.javacourse.user.service.UserService;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 public class UserDefaultService implements UserService {
 
@@ -35,8 +36,11 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public User add(User entity) {
-        userRepository.add(entity);
+    public User add(User user) {
+        if (user != null) {
+            userRepository.add(user);
+        }
+        return user;
     }
 
     @Override
@@ -52,7 +56,7 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public User findById(Long id) {
+    public Optional<User> findById(Long id) {
         if (id != null) {
             return userRepository.findById(id);
         } else {
@@ -82,10 +86,12 @@ public class UserDefaultService implements UserService {
     @Override
     public List<? extends User> search(UserSearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
-            return Collections.singletonList(userRepository.findById(searchCondition.getId()));
+            return userRepository.findById(searchCondition.getId()).map(Collections::singletonList).orElse(Collections.emptyList());
         } else {
             return userRepository.search(searchCondition);
         }
+    }
+
 
     @Override
     public List<User> findAll() {
