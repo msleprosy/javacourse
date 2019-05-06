@@ -110,13 +110,4 @@ public class CountryMemoryCollectionRepository implements CountryRepository {
         return CollectionUtils.getPageableData(countries, paginator.getLimit(), paginator.getOffset());
     }
 
-/*    private void deleteCountryByName(String nameForDeleting) {
-        Iterator<Country> iter = countries.iterator();
-        while (iter.hasNext()) {
-            String countryName = iter.next().getName();
-            if (countryName.equals(nameForDeleting)) {
-                iter.remove();
-            }
-        }
-    }*/
 }

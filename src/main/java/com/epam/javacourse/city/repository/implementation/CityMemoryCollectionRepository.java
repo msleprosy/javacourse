@@ -5,10 +5,7 @@ import com.epam.javacourse.city.repository.CityRepository;
 import com.epam.javacourse.city.search.CitySearchCondition;
 import com.epam.javacourse.storage.SequenceGenerator;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 import static com.epam.javacourse.common.solutions.utils.StringUtils.isNotBlank;
 import static com.epam.javacourse.storage.Storage.cities;
@@ -17,16 +14,15 @@ public class CityMemoryCollectionRepository implements CityRepository {
     private CityOrderingComponent orderingComponent = new CityOrderingComponent();
 
     @Override
-    public void add(City entity) {
-        entity.setId(SequenceGenerator.getNextValue());
-        cities.add(entity);
+    public City add(City city) {
+        city.setId(SequenceGenerator.getNextValue());
+        cities.add(city);
+        return city;
     }
 
     @Override
     public void add(Collection<City> cities) {
-        for (City city : cities) {
-            add(city);
-        }
+        cities.forEach(this::add);
     }
 
     @Override
@@ -36,14 +32,11 @@ public class CityMemoryCollectionRepository implements CityRepository {
 
     @Override
     public void deleteById(Long id) {
-        City found = findCityById(id);
-        if (found != null) {
-            cities.remove(found);
-        }
+        findCityById(id).map(city -> cities.remove(city));
     }
 
     @Override
-    public List<City> search(CitySearchCondition searchCondition) {
+    public List<? extends City> search(CitySearchCondition searchCondition) {
         if (searchCondition.getId() != null) {
             return Collections.singletonList(findById(searchCondition.getId()));
         } else {
@@ -59,15 +52,13 @@ public class CityMemoryCollectionRepository implements CityRepository {
     }
 
     @Override
-    public City findById(Long id) {
+    public Optional<City> findById(Long id) {
         return findCityById(id);
     }
 
     @Override
     public void printAll() {
-        for (City city : cities) {
-            System.out.println(city);
-        }
+         cities.forEach(System.out::println);
     }
 
     private List<City> doSearch(CitySearchCondition searchCondition) {
@@ -91,13 +82,8 @@ public class CityMemoryCollectionRepository implements CityRepository {
     }
 
 
-    private City findCityById(long citylId) {
-        for (City city : cities) {
-            if (Long.valueOf(citylId).equals(city.getId())) {
-                return city;
-            }
-        }
-        return null;
+    private Optional<City> findCityById(long cityId) {
+        return cities.stream().filter(city -> Long.valueOf(cityId).equals(city.getId())).findAny();
     }
 
     @Override

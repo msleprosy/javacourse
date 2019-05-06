@@ -51,7 +51,7 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public void update(User entity) {
+    public void update(User user) {
 
     }
 
@@ -72,9 +72,9 @@ public class UserDefaultService implements UserService {
     }
 
     @Override
-    public void delete(User entity) {
-        if (entity.getId() != null) {
-            this.deleteById(entity.getId());
+    public void delete(User user) {
+        if (user.getId() != null) {
+            this.deleteById(user.getId());
         }
     }
 

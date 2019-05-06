@@ -61,24 +61,6 @@ public class UserMemoryCollectionRepository implements UserRepository {
         return users;
     }
 
-
-/*    @Override
-    public List<User> search(UserSearchCondition searchCondition) {
-        if (searchCondition.getId() != null) {
-            return Collections.singletonList(findById(searchCondition.getId()));
-        } else {
-            List<User> result = doSearch(searchCondition);
-
-            boolean needOrdering = !result.isEmpty() && searchCondition.needOrdering();
-            if (needOrdering) {
-                orderingComponent.applyOrdering(result, searchCondition);
-            }
-
-            return result;
-        }
-    }*/
-
-
     @Override
     public void printAll() {
         users.forEach(System.out::println);
@@ -93,27 +75,6 @@ public class UserMemoryCollectionRepository implements UserRepository {
     public int countAll() {
         return users.size();
     }
-
-/*
-    private List<User> doSearch(UserSearchCondition searchCondition) {
-        boolean searchByName = isNotBlank(searchCondition.getName());
-
-        List<User> result = new ArrayList<>();
-        for (User user : users) {
-            if (user != null) {
-                boolean found = true;
-
-                if (searchByName) {
-                    found = searchCondition.getName().equals(user.getName());
-                }
-
-                if (found) {
-                    result.add(user);
-                }
-            }
-        }
-        return result;
-    }*/
 
     private Optional<User> findUserById(long userId) {
         return users.stream().filter(user -> Long.valueOf(userId).equals(user.getId())).findAny();
